@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B60C5832B190D0900D11386 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B60C5822B190D0900D11386 /* AppDelegate.swift */; };
+		2B60C5852B190D0900D11386 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B60C5842B190D0900D11386 /* ViewController.swift */; };
+		2B60C5872B190D0A00D11386 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B60C5862B190D0A00D11386 /* Assets.xcassets */; };
+		2B60C58A2B190D0A00D11386 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B60C5882B190D0A00D11386 /* Main.storyboard */; };
+		2B60C5952B190D0A00D11386 /* gpt_web_desktopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B60C5942B190D0A00D11386 /* gpt_web_desktopTests.swift */; };
+		2B60C59F2B190D0A00D11386 /* gpt_web_desktopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B60C59E2B190D0A00D11386 /* gpt_web_desktopUITests.swift */; };
+		2B60C5A12B190D0A00D11386 /* gpt_web_desktopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B60C5A02B190D0A00D11386 /* gpt_web_desktopUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2B60C5912B190D0A00D11386 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B60C5772B190D0900D11386 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B60C57E2B190D0900D11386;
+			remoteInfo = "gpt-web-desktop";
+		};
+		2B60C59B2B190D0A00D11386 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B60C5772B190D0900D11386 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B60C57E2B190D0900D11386;
+			remoteInfo = "gpt-web-desktop";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2B60C57F2B190D0900D11386 /* gpt-web-desktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gpt-web-desktop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B60C5822B190D0900D11386 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2B60C5842B190D0900D11386 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2B60C5862B190D0A00D11386 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B60C5892B190D0A00D11386 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2B60C58B2B190D0A00D11386 /* gpt_web_desktop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gpt_web_desktop.entitlements; sourceTree = "<group>"; };
+		2B60C5902B190D0A00D11386 /* gpt-web-desktopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gpt-web-desktopTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B60C5942B190D0A00D11386 /* gpt_web_desktopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpt_web_desktopTests.swift; sourceTree = "<group>"; };
+		2B60C59A2B190D0A00D11386 /* gpt-web-desktopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gpt-web-desktopUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B60C59E2B190D0A00D11386 /* gpt_web_desktopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpt_web_desktopUITests.swift; sourceTree = "<group>"; };
+		2B60C5A02B190D0A00D11386 /* gpt_web_desktopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpt_web_desktopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2B60C57C2B190D0900D11386 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B60C58D2B190D0A00D11386 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B60C5972B190D0A00D11386 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B60C5762B190D0900D11386 = {
+			isa = PBXGroup;
+			children = (
+				2B60C5812B190D0900D11386 /* gpt-web-desktop */,
+				2B60C5932B190D0A00D11386 /* gpt-web-desktopTests */,
+				2B60C59D2B190D0A00D11386 /* gpt-web-desktopUITests */,
+				2B60C5802B190D0900D11386 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2B60C5802B190D0900D11386 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B60C57F2B190D0900D11386 /* gpt-web-desktop.app */,
+				2B60C5902B190D0A00D11386 /* gpt-web-desktopTests.xctest */,
+				2B60C59A2B190D0A00D11386 /* gpt-web-desktopUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2B60C5812B190D0900D11386 /* gpt-web-desktop */ = {
+			isa = PBXGroup;
+			children = (
+				2B60C5822B190D0900D11386 /* AppDelegate.swift */,
+				2B60C5842B190D0900D11386 /* ViewController.swift */,
+				2B60C5862B190D0A00D11386 /* Assets.xcassets */,
+				2B60C5882B190D0A00D11386 /* Main.storyboard */,
+				2B60C58B2B190D0A00D11386 /* gpt_web_desktop.entitlements */,
+			);
+			path = "gpt-web-desktop";
+			sourceTree = "<group>";
+		};
+		2B60C5932B190D0A00D11386 /* gpt-web-desktopTests */ = {
+			isa = PBXGroup;
+			children = (
+				2B60C5942B190D0A00D11386 /* gpt_web_desktopTests.swift */,
+			);
+			path = "gpt-web-desktopTests";
+			sourceTree = "<group>";
+		};
+		2B60C59D2B190D0A00D11386 /* gpt-web-desktopUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2B60C59E2B190D0A00D11386 /* gpt_web_desktopUITests.swift */,
+				2B60C5A02B190D0A00D11386 /* gpt_web_desktopUITestsLaunchTests.swift */,
+			);
+			path = "gpt-web-desktopUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2B60C57E2B190D0900D11386 /* gpt-web-desktop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B60C5A42B190D0A00D11386 /* Build configuration list for PBXNativeTarget "gpt-web-desktop" */;
+			buildPhases = (
+				2B60C57B2B190D0900D11386 /* Sources */,
+				2B60C57C2B190D0900D11386 /* Frameworks */,
+				2B60C57D2B190D0900D11386 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "gpt-web-desktop";
+			productName = "gpt-web-desktop";
+			productReference = 2B60C57F2B190D0900D11386 /* gpt-web-desktop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2B60C58F2B190D0A00D11386 /* gpt-web-desktopTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B60C5A72B190D0A00D11386 /* Build configuration list for PBXNativeTarget "gpt-web-desktopTests" */;
+			buildPhases = (
+				2B60C58C2B190D0A00D11386 /* Sources */,
+				2B60C58D2B190D0A00D11386 /* Frameworks */,
+				2B60C58E2B190D0A00D11386 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B60C5922B190D0A00D11386 /* PBXTargetDependency */,
+			);
+			name = "gpt-web-desktopTests";
+			productName = "gpt-web-desktopTests";
+			productReference = 2B60C5902B190D0A00D11386 /* gpt-web-desktopTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2B60C5992B190D0A00D11386 /* gpt-web-desktopUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B60C5AA2B190D0A00D11386 /* Build configuration list for PBXNativeTarget "gpt-web-desktopUITests" */;
+			buildPhases = (
+				2B60C5962B190D0A00D11386 /* Sources */,
+				2B60C5972B190D0A00D11386 /* Frameworks */,
+				2B60C5982B190D0A00D11386 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B60C59C2B190D0A00D11386 /* PBXTargetDependency */,
+			);
+			name = "gpt-web-desktopUITests";
+			productName = "gpt-web-desktopUITests";
+			productReference = 2B60C59A2B190D0A00D11386 /* gpt-web-desktopUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2B60C5772B190D0900D11386 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					2B60C57E2B190D0900D11386 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					2B60C58F2B190D0A00D11386 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 2B60C57E2B190D0900D11386;
+					};
+					2B60C5992B190D0A00D11386 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 2B60C57E2B190D0900D11386;
+					};
+				};
+			};
+			buildConfigurationList = 2B60C57A2B190D0900D11386 /* Build configuration list for PBXProject "gpt-web-desktop" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2B60C5762B190D0900D11386;
+			productRefGroup = 2B60C5802B190D0900D11386 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2B60C57E2B190D0900D11386 /* gpt-web-desktop */,
+				2B60C58F2B190D0A00D11386 /* gpt-web-desktopTests */,
+				2B60C5992B190D0A00D11386 /* gpt-web-desktopUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2B60C57D2B190D0900D11386 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B60C5872B190D0A00D11386 /* Assets.xcassets in Resources */,
+				2B60C58A2B190D0A00D11386 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B60C58E2B190D0A00D11386 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B60C5982B190D0A00D11386 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2B60C57B2B190D0900D11386 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B60C5852B190D0900D11386 /* ViewController.swift in Sources */,
+				2B60C5832B190D0900D11386 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B60C58C2B190D0A00D11386 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B60C5952B190D0A00D11386 /* gpt_web_desktopTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B60C5962B190D0A00D11386 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B60C5A12B190D0A00D11386 /* gpt_web_desktopUITestsLaunchTests.swift in Sources */,
+				2B60C59F2B190D0A00D11386 /* gpt_web_desktopUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2B60C5922B190D0A00D11386 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B60C57E2B190D0900D11386 /* gpt-web-desktop */;
+			targetProxy = 2B60C5912B190D0A00D11386 /* PBXContainerItemProxy */;
+		};
+		2B60C59C2B190D0A00D11386 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B60C57E2B190D0900D11386 /* gpt-web-desktop */;
+			targetProxy = 2B60C59B2B190D0A00D11386 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2B60C5882B190D0A00D11386 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B60C5892B190D0A00D11386 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2B60C5A22B190D0A00D11386 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=*]" = "/Users/kj/Desktop/gpt-dektop-web-logo.png";
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2B60C5A32B190D0A00D11386 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=*]" = "/Users/kj/Desktop/gpt-dektop-web-logo.png";
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		2B60C5A52B190D0A00D11386 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "gpt-web-desktop/gpt_web_desktop.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "KJ.gpt-web-desktop";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2B60C5A62B190D0A00D11386 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "gpt-web-desktop/gpt_web_desktop.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "KJ.gpt-web-desktop";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		2B60C5A82B190D0A00D11386 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "KJ.gpt-web-desktopTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gpt-web-desktop.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gpt-web-desktop";
+			};
+			name = Debug;
+		};
+		2B60C5A92B190D0A00D11386 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "KJ.gpt-web-desktopTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gpt-web-desktop.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gpt-web-desktop";
+			};
+			name = Release;
+		};
+		2B60C5AB2B190D0A00D11386 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "KJ.gpt-web-desktopUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "gpt-web-desktop";
+			};
+			name = Debug;
+		};
+		2B60C5AC2B190D0A00D11386 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "KJ.gpt-web-desktopUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "gpt-web-desktop";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B60C57A2B190D0900D11386 /* Build configuration list for PBXProject "gpt-web-desktop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B60C5A22B190D0A00D11386 /* Debug */,
+				2B60C5A32B190D0A00D11386 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B60C5A42B190D0A00D11386 /* Build configuration list for PBXNativeTarget "gpt-web-desktop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B60C5A52B190D0A00D11386 /* Debug */,
+				2B60C5A62B190D0A00D11386 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B60C5A72B190D0A00D11386 /* Build configuration list for PBXNativeTarget "gpt-web-desktopTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B60C5A82B190D0A00D11386 /* Debug */,
+				2B60C5A92B190D0A00D11386 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B60C5AA2B190D0A00D11386 /* Build configuration list for PBXNativeTarget "gpt-web-desktopUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B60C5AB2B190D0A00D11386 /* Debug */,
+				2B60C5AC2B190D0A00D11386 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2B60C5772B190D0900D11386 /* Project object */;
+}
