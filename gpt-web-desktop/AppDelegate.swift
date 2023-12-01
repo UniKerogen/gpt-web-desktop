@@ -35,11 +35,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             myWindow = NSWindow(contentViewController: viewController)
             
             // Set the default size of the window
-            let defaultSize = NSSize(width: 800, height: 1600)
+            let defaultSize = NSSize(width: 400, height: 900)
             myWindow.setContentSize(defaultSize)
             
+            // Position the window at the far right side and center on the horizontal axis
+            if let mainScreen = NSScreen.main {
+                let screenFrame = mainScreen.visibleFrame
+                let windowRect = NSRect(x: screenFrame.maxX - defaultSize.width, y: screenFrame.midY - defaultSize.height / 2, width: defaultSize.width, height: defaultSize.height)
+                myWindow.setFrame(windowRect, display: true)
+            }
+            
             myWindow.makeKeyAndOrderFront(nil)
-            myWindow.center()
         }
     }
     
