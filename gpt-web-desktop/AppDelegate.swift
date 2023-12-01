@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
             // Add any additional setup code here.
+        showMainWindow()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -39,11 +40,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             myWindow.setContentSize(defaultSize)
             
             // Position the window at the far right side and center on the horizontal axis
-            if let mainScreen = NSScreen.main {
-                let screenFrame = mainScreen.visibleFrame
-                let windowRect = NSRect(x: screenFrame.maxX - defaultSize.width, y: screenFrame.midY - defaultSize.height / 2, width: defaultSize.width, height: defaultSize.height)
-                myWindow.setFrame(windowRect, display: true)
-            }
+                if let mainScreen = NSScreen.main {
+                    let screenFrame = mainScreen.visibleFrame
+                    let windowRect = NSRect(x: screenFrame.maxX - defaultSize.width, y: screenFrame.midY - defaultSize.height / 2, width: defaultSize.width, height: defaultSize.height)
+                    myWindow.setFrame(windowRect, display: true)
+                }
             
             myWindow.makeKeyAndOrderFront(nil)
         }
@@ -74,7 +75,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func quit(_ sender: Any) {
-            NSApp.terminate(sender)
-        }
+        NSApp.terminate(sender)
+    }
 }
 
