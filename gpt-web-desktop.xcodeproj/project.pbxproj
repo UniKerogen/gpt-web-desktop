@@ -14,6 +14,8 @@
 		2B60C5952B190D0A00D11386 /* gpt_web_desktopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B60C5942B190D0A00D11386 /* gpt_web_desktopTests.swift */; };
 		2B60C59F2B190D0A00D11386 /* gpt_web_desktopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B60C59E2B190D0A00D11386 /* gpt_web_desktopUITests.swift */; };
 		2B60C5A12B190D0A00D11386 /* gpt_web_desktopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B60C5A02B190D0A00D11386 /* gpt_web_desktopUITestsLaunchTests.swift */; };
+		2B60C61E2B1A7EFC00D11386 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B60C61D2B1A7EFC00D11386 /* PreferencesViewController.swift */; };
+		2B60C6202B1A83F200D11386 /* PreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B60C61F2B1A83F200D11386 /* PreferencesView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		2B60C59A2B190D0A00D11386 /* gpt-web-desktopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gpt-web-desktopUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B60C59E2B190D0A00D11386 /* gpt_web_desktopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpt_web_desktopUITests.swift; sourceTree = "<group>"; };
 		2B60C5A02B190D0A00D11386 /* gpt_web_desktopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpt_web_desktopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2B60C61D2B1A7EFC00D11386 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		2B60C61F2B1A83F200D11386 /* PreferencesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 			children = (
 				2B60C5822B190D0900D11386 /* AppDelegate.swift */,
 				2B60C5842B190D0900D11386 /* ViewController.swift */,
+				2B60C61D2B1A7EFC00D11386 /* PreferencesViewController.swift */,
+				2B60C61F2B1A83F200D11386 /* PreferencesView.xib */,
 				2B60C5862B190D0A00D11386 /* Assets.xcassets */,
 				2B60C5882B190D0A00D11386 /* Main.storyboard */,
 				2B60C58B2B190D0A00D11386 /* gpt_web_desktop.entitlements */,
@@ -227,6 +233,7 @@
 			files = (
 				2B60C5872B190D0A00D11386 /* Assets.xcassets in Resources */,
 				2B60C58A2B190D0A00D11386 /* Main.storyboard in Resources */,
+				2B60C6202B1A83F200D11386 /* PreferencesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +260,7 @@
 			files = (
 				2B60C5852B190D0900D11386 /* ViewController.swift in Sources */,
 				2B60C5832B190D0900D11386 /* AppDelegate.swift in Sources */,
+				2B60C61E2B1A7EFC00D11386 /* PreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

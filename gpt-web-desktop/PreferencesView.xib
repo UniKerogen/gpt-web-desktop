@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22155" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22155"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <tabView translatesAutoresizingMaskIntoConstraints="NO" id="Qaf-18-nEj">
+                    <rect key="frame" x="13" y="10" width="454" height="256"/>
+                    <font key="font" metaFont="system"/>
+                    <tabViewItems>
+                        <tabViewItem label="General" identifier="" id="aC5-yP-ACv">
+                            <view key="view" id="SDQ-pV-Enu">
+                                <rect key="frame" x="10" y="33" width="434" height="210"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
+                        </tabViewItem>
+                        <tabViewItem label="WebSite" identifier="" id="twB-2k-Vyy">
+                            <view key="view" id="9sQ-ee-lQS">
+                                <rect key="frame" x="10" y="33" width="434" height="210"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
+                        </tabViewItem>
+                    </tabViewItems>
+                </tabView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Qaf-18-nEj" secondAttribute="trailing" constant="20" symbolic="YES" id="2zz-C3-SD3"/>
+                <constraint firstItem="Qaf-18-nEj" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" symbolic="YES" id="8za-v5-fFa"/>
+                <constraint firstItem="Qaf-18-nEj" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="12" symbolic="YES" id="u4t-Fj-4D3"/>
+                <constraint firstAttribute="bottom" secondItem="Qaf-18-nEj" secondAttribute="bottom" constant="20" symbolic="YES" id="ylb-VW-aJ0"/>
+            </constraints>
+            <point key="canvasLocation" x="87" y="135"/>
+        </customView>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" id="7AJ-hT-ahi">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="140" y="176" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1512" height="944"/>
+            <view key="contentView" id="c2W-AX-gp4">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <tabView translatesAutoresizingMaskIntoConstraints="NO" id="xaX-Gl-9i7">
+                        <rect key="frame" x="13" y="10" width="454" height="254"/>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="General" identifier="" id="9Bj-mA-7hA">
+                                <view key="view" id="33P-As-IK2">
+                                    <rect key="frame" x="10" y="33" width="434" height="208"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Chat Model" identifier="" id="N7y-cl-OZN">
+                                <view key="view" id="Mrh-jT-Ey0">
+                                    <rect key="frame" x="10" y="33" width="434" height="208"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZST-mZ-osy">
+                                            <rect key="frame" x="260" y="113" width="164" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Open in New Window" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CtJ-EQ-i26">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uEK-aX-XBm">
+                                            <rect key="frame" x="136" y="156" width="285" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" title="ChatGPT" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="3jV-us-0ga" id="7Kz-Bx-7Xd">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <menu key="menu" id="95O-Hw-Z6t">
+                                                    <items>
+                                                        <menuItem title="ChatGPT" state="on" id="3jV-us-0ga"/>
+                                                        <menuItem title="文言一心" id="lCV-XJ-6sk"/>
+                                                        <menuItem title="Item 3" id="qzs-mJ-bTx"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                        </popUpButton>
+                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qnb-1r-c4C">
+                                            <rect key="frame" x="52" y="162" width="81" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Chat Model: " id="cHC-xd-37x">
+                                                <font key="font" usesAppearanceFont="YES"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="xaX-Gl-9i7" firstAttribute="top" secondItem="c2W-AX-gp4" secondAttribute="top" constant="12" symbolic="YES" id="JeB-OO-BvO"/>
+                    <constraint firstAttribute="bottom" secondItem="xaX-Gl-9i7" secondAttribute="bottom" constant="20" symbolic="YES" id="abt-SN-nGk"/>
+                    <constraint firstAttribute="trailing" secondItem="xaX-Gl-9i7" secondAttribute="trailing" constant="20" symbolic="YES" id="g1n-7Y-hcl"/>
+                    <constraint firstItem="xaX-Gl-9i7" firstAttribute="leading" secondItem="c2W-AX-gp4" secondAttribute="leading" constant="20" symbolic="YES" id="rXv-tx-xmq"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="-16" y="-46"/>
+        </window>
+    </objects>
+</document>

@@ -141,7 +141,4 @@ class MyViewController: NSViewController, WKNavigationDelegate {
             }
         }
     }
-    
-    // Window Storing
-    
 }

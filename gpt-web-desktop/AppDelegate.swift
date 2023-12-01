@@ -11,11 +11,38 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var myWindow: NSWindow!
+    var preferencesViewController: PreferencesViewController!
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-            // Add any additional setup code here.
+        // Add any additional setup code here.
         showMainWindow()
+        
+        // Create the preferences view controller
+        preferencesViewController = PreferencesViewController()
+
+        // Create a Preferences menu item
+        let preferencesMenuItem = NSMenuItem(title: "Preferences", action: #selector(showPreferencesPanel(_:)), keyEquivalent: ",")
+        preferencesMenuItem.target = self
+
+        // Find the app name menu item
+        if let appMenuItem = getAppNameMenuItem() {
+            // Create a submenu for Preferences under the app name
+            let preferencesMenu = NSMenu(title: "Preferences")
+            
+            // Add items to the submenu in the desired order
+            preferencesMenu.addItem(withTitle: "About", action: #selector(about(_:)), keyEquivalent: "")
+            preferencesMenu.addItem(NSMenuItem.separator())
+            preferencesMenu.addItem(withTitle: "Preferences", action: #selector(showPreferencesPanel(_:)), keyEquivalent: ",")
+            preferencesMenu.addItem(NSMenuItem.separator())
+            preferencesMenu.addItem(withTitle: "Hide", action: #selector(NSApplication.hide(_:)), keyEquivalent: "h")
+            preferencesMenu.addItem(withTitle: "Hide Others", action: #selector(NSApplication.hideOtherApplications(_:)), keyEquivalent: "h")
+            preferencesMenu.addItem(withTitle: "Show All", action: #selector(NSApplication.unhideAllApplications(_:)), keyEquivalent: "")
+            preferencesMenu.addItem(NSMenuItem.separator())
+            preferencesMenu.addItem(withTitle: "Quit", action: #selector(quit(_:)), keyEquivalent: "q")
+
+            appMenuItem.submenu = preferencesMenu
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -76,6 +103,39 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func quit(_ sender: Any) {
         NSApp.terminate(sender)
+    }
+    
+    @objc func about(_ sender: Any) {
+        let appInfo: [String: Any] = [
+            "ApplicationName": "ChatGPT Web Viewer",
+            "ApplicationVersion": "1.0",
+            "ApplicationCopyright": "© 2023 Kuang Jiang",
+            "ApplicationDescription": "A Simple Web Viewer for web-based interaction with ChatGPT."
+        ]
+
+        NSApp.orderFrontStandardAboutPanel(appInfo)
+    }
+    
+    // Preference Menu
+    private func getAppNameMenuItem() -> NSMenuItem? {
+        if let mainMenu = NSApp.mainMenu {
+            for menuItem in mainMenu.items {
+                if menuItem.title == "ChatGPT" {
+                    return menuItem
+                }
+            }
+        }
+        return nil
+    }
+    
+    @objc func showPreferencesPanel(_ sender: Any) {
+        guard preferencesViewController != nil else {
+            return
+        }
+
+        let preferencesPanel = NSPanel(contentViewController: preferencesViewController)
+        preferencesPanel.title = "Preferences"
+        preferencesPanel.makeKeyAndOrderFront(nil)
     }
 }
 
