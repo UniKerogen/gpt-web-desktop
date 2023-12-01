@@ -19,7 +19,7 @@
                                         <menuItem title="About ChatGPT" id="5kV-Vb-QxS" userLabel="About ChatGPT">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                                <action selector="about:" target="Voe-Tx-rLC" id="N7c-SO-b6d"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
@@ -363,13 +363,13 @@
         <!--My View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="XfG-lQ-9wD" customClass="MyViewController" customModule="ChatGPT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainApp" id="XfG-lQ-9wD" customClass="MyViewController" customModule="ChatGPT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="802"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Az0-n3-PkL">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="802"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -378,9 +378,13 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Az0-n3-PkL" secondAttribute="bottom" id="8yE-pI-rYx"/>
+                            <constraint firstItem="Az0-n3-PkL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="9Ej-kb-D1J"/>
                             <constraint firstItem="Az0-n3-PkL" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Hdy-Km-uHd"/>
+                            <constraint firstAttribute="trailing" secondItem="Az0-n3-PkL" secondAttribute="trailing" constant="9" id="KcA-zh-zUO"/>
+                            <constraint firstAttribute="bottom" secondItem="Az0-n3-PkL" secondAttribute="bottom" id="WHS-Tu-EOR"/>
                             <constraint firstItem="Az0-n3-PkL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="kBj-dl-JoI"/>
                             <constraint firstAttribute="trailing" secondItem="Az0-n3-PkL" secondAttribute="trailing" id="wzP-fn-Yvp"/>
+                            <constraint firstItem="Az0-n3-PkL" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="yBb-5K-XHj"/>
                         </constraints>
                     </view>
                     <connections>
@@ -389,7 +393,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="964"/>
         </scene>
     </scenes>
 </document>
