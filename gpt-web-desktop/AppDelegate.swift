@@ -33,6 +33,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         if let viewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("MainViewController")) as? NSViewController {
             myWindow = NSWindow(contentViewController: viewController)
+            
+            // Set the default size of the window
+            let defaultSize = NSSize(width: 800, height: 1600)
+            myWindow.setContentSize(defaultSize)
+            
             myWindow.makeKeyAndOrderFront(nil)
             myWindow.center()
         }
