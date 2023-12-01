@@ -54,8 +54,12 @@ class MyViewController: NSViewController, WKNavigationDelegate {
         } catch {
             print("Error setting window size: \(error)")
         }
+        
+        // Restore Window State
+        restoreWindowState()
     }
 
+    // Set Window Size
     private func setWindowSize() throws {
         let userDefaults = UserDefaults.standard
 
@@ -68,6 +72,7 @@ class MyViewController: NSViewController, WKNavigationDelegate {
         }
     }
 
+    // Save Window Size
     private func saveWindowSize() {
         let userDefaults = UserDefaults.standard
 
@@ -83,10 +88,47 @@ class MyViewController: NSViewController, WKNavigationDelegate {
             }
         }
     }
+    
+    // Save Window State
+    private func saveWindowState() {
+        let userDefaults = UserDefaults.standard
+
+        // Save the window size and position to UserDefaults
+        if let window = self.view.window {
+            let windowFrame = window.frame
+            let windowState = [
+                "x": windowFrame.origin.x,
+                "y": windowFrame.origin.y,
+                "width": windowFrame.size.width,
+                "height": windowFrame.size.height
+            ]
+            userDefaults.set(windowState, forKey: "WindowFrame")
+        }
+    }
+    
+    // Restore Window State
+    private func restoreWindowState() {
+        let userDefaults = UserDefaults.standard
+
+        // Check if window state is stored in UserDefaults
+        if let windowState = userDefaults.dictionary(forKey: "WindowFrame"),
+            let x = windowState["x"] as? CGFloat,
+            let y = windowState["y"] as? CGFloat,
+            let width = windowState["width"] as? CGFloat,
+            let height = windowState["height"] as? CGFloat {
+
+            // Set the window size and position
+            if let window = self.view.window {
+                let newFrame = NSRect(x: x, y: y, width: width, height: height)
+                window.setFrame(newFrame, display: true)
+            }
+        }
+    }
 
     override func viewWillDisappear() {
         super.viewWillDisappear()
         saveWindowSize()
+        saveWindowState()
     }
 
     // MARK: - WKNavigationDelegate
@@ -99,4 +141,7 @@ class MyViewController: NSViewController, WKNavigationDelegate {
             }
         }
     }
+    
+    // Window Storing
+    
 }

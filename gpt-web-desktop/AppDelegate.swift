@@ -10,21 +10,60 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    
+    var myWindow: NSWindow!
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+            // Add any additional setup code here.
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        // Insert code here to tear down your application.
     }
 
-    func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
+    func applicationDidBecomeActive(_ notification: Notification) {
+        // Check if a window is already open
+        if NSApp.windows.isEmpty {
+            // If no window is open, create and show a new window
+            showMainWindow()
+        }
+    }
+
+    private func showMainWindow() {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+        if let viewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("MainViewController")) as? NSViewController {
+            myWindow = NSWindow(contentViewController: viewController)
+            myWindow.makeKeyAndOrderFront(nil)
+            myWindow.center()
+        }
+    }
+    
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        // If no window is open, create a new window
+        if !flag {
+            showMainWindow()
+        }
         return true
     }
+    
+    // Function to handle right-click menu item action
+    @objc func openNewWindow(_ sender: Any?) {
+        showMainWindow()
+    }
+    
+    func applicationDockMenu(_ sender: NSApplication) -> NSMenu? {
+        // Create a custom right-click menu
+        let menu = NSMenu()
 
+        // Add menu item to open a new window
+        let openNewWindowItem = NSMenuItem(title: "Open New Window", action: #selector(openNewWindow(_:)), keyEquivalent: "")
+        menu.addItem(openNewWindowItem)
 
+        return menu
+    }
+    
+    @IBAction func quit(_ sender: Any) {
+            NSApp.terminate(sender)
+        }
 }
 
