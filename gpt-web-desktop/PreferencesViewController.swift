@@ -55,7 +55,7 @@ class PreferencesViewController: NSViewController {
         }
         
         // Save the selected website to UserDefaults
-        UserDefaults.standard.set(targetURL, forKey: "SelectedWebsite")
+        UserDefaults.standard.set(websiteComboBox.stringValue, forKey: "SelectedWebsite")
         
         // Update the selected website in the existing window controller
         targetWebsite = targetURL

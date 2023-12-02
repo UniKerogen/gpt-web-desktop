@@ -12,11 +12,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="ChatGPT" id="1Xt-HY-uBw" userLabel="ChatGPT">
+                            <menuItem title="GPT Desktop" id="1Xt-HY-uBw" userLabel="ChatGPT">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="ChatGPT" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="GPT Desktop" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About ChatGPT" id="5kV-Vb-QxS" userLabel="About ChatGPT">
+                                        <menuItem title="About GPT Desktop" id="5kV-Vb-QxS" userLabel="About ChatGPT">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="aboutPanel:" target="Voe-Tx-rLC" id="b6x-TI-eUt"/>
@@ -29,7 +29,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide ChatGPT" keyEquivalent="h" id="Olw-nP-bQN" userLabel="Hide ChatGPT">
+                                        <menuItem title="Hide GPT Desktop" keyEquivalent="h" id="Olw-nP-bQN" userLabel="Hide ChatGPT">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -47,7 +47,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit ChatGPT" keyEquivalent="q" id="4sb-4s-VLi" userLabel="Quit ChatGPT">
+                                        <menuItem title="Quit GPT Desktop" keyEquivalent="q" id="4sb-4s-VLi" userLabel="Quit ChatGPT">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -210,16 +210,16 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PLI-ce-gSn">
-                                <rect key="frame" x="51" y="37" width="78" height="16"/>
+                                <rect key="frame" x="18" y="37" width="127" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Chat Model:" id="uM8-Tu-qvQ">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Current Chat Model:" id="uM8-Tu-qvQ">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <comboBox focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tl7-mx-HR1">
-                                <rect key="frame" x="153" y="33" width="241" height="23"/>
+                                <rect key="frame" x="150" y="33" width="238" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="--Select--" placeholderString="--Select--" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="SSw-NK-POj">
                                     <font key="font" metaFont="system"/>
@@ -228,9 +228,9 @@
                                 </comboBoxCell>
                             </comboBox>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ExM-2z-GoM">
-                                <rect key="frame" x="398" y="28" width="64" height="32"/>
+                                <rect key="frame" x="386" y="28" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c8b-s8-oEY">
+                                <buttonCell key="cell" type="push" title="Change" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c8b-s8-oEY">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>

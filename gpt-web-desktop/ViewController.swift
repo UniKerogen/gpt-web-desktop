@@ -48,6 +48,7 @@ class MyViewController: NSViewController, WKNavigationDelegate {
             loadURL(website)
         } else {
             loadURL("https://www.chatgpt.com/")
+            UserDefaults.standard.set("ChatGPT", forKey: "SelectedWebsite")
         }
 
         // Set the window size based on the stored size in UserDefaults
