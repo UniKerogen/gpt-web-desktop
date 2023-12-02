@@ -23,17 +23,15 @@ class SizeWrapper: NSObject, NSCoding, NSSecureCoding {
         aCoder.encode(size, forKey: "size")
     }
     
-    // MARK: - NSSecureCoding
-    
     static var supportsSecureCoding: Bool {
         return true
     }
 }
 
 class MyViewController: NSViewController, WKNavigationDelegate {
-
+    
     @IBOutlet weak var myWebView: WKWebView!
-
+    
     private let windowSizeKey = "ChatGPTWindowSize"
 
     override func viewDidLoad() {
