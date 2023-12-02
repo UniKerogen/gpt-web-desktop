@@ -32,6 +32,8 @@ class MyViewController: NSViewController, WKNavigationDelegate {
     
     @IBOutlet weak var myWebView: WKWebView!
     
+    // var selectedWebsite: String?
+    
     private let windowSizeKey = "ChatGPTWindowSize"
 
     override func viewDidLoad() {
@@ -41,9 +43,11 @@ class MyViewController: NSViewController, WKNavigationDelegate {
         myWebView.navigationDelegate = self
 
         // Load the ChatGPT webpage
-        if let url = URL(string: "https://www.chatgpt.com/") {
-            let request = URLRequest(url: url)
-            myWebView.load(request)
+        // if let website = selectedWebsite {
+        if let website = targetWebsite{
+            loadURL(website)
+        } else {
+            loadURL("https://www.chatgpt.com/")
         }
 
         // Set the window size based on the stored size in UserDefaults
@@ -55,6 +59,14 @@ class MyViewController: NSViewController, WKNavigationDelegate {
         
         // Restore Window State
         restoreWindowState()
+    }
+    
+    // Load URL
+    func loadURL(_ urlString: String) {
+        if let url = URL(string: urlString) {
+            let request = URLRequest(url: url)
+            myWebView.load(request)
+        }
     }
 
     // Set Window Size
