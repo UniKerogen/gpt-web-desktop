@@ -1,61 +1,61 @@
 {
   "images" : [
     {
-      "filename" : "gpt-dektop-web-logo-16.png",
+      "filename" : "gpt-dektop-web-logo.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
-      "filename" : "gpt-dektop-web-logo-32 1.png",
+      "filename" : "gpt-dektop-web-logo 1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
-      "filename" : "gpt-dektop-web-logo-32.png",
+      "filename" : "gpt-dektop-web-logo 2.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
     },
     {
-      "filename" : "gpt-dektop-web-logo-64.png",
+      "filename" : "gpt-dektop-web-logo 3.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "32x32"
     },
     {
-      "filename" : "gpt-dektop-web-logo-128.png",
+      "filename" : "gpt-dektop-web-logo 4.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
-      "filename" : "gpt-dektop-web-logo-256 1.png",
+      "filename" : "gpt-dektop-web-logo 5.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
-      "filename" : "gpt-dektop-web-logo-256.png",
+      "filename" : "gpt-dektop-web-logo 6.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
-      "filename" : "gpt-dektop-web-logo-512 1.png",
+      "filename" : "gpt-dektop-web-logo 7.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
-      "filename" : "gpt-dektop-web-logo-512.png",
+      "filename" : "gpt-dektop-web-logo 8.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
-      "filename" : "gpt-dektop-web-logo.png",
+      "filename" : "gpt-dektop-web-logo 9.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"

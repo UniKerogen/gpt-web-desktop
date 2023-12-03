@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B60C57F2B190D0900D11386 /* ChatGPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatGPT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B60C57F2B190D0900D11386 /* GPT Desktop - D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GPT Desktop - D.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B60C5822B190D0900D11386 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B60C5842B190D0900D11386 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B60C5862B190D0A00D11386 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		2B60C5802B190D0900D11386 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B60C57F2B190D0900D11386 /* ChatGPT.app */,
+				2B60C57F2B190D0900D11386 /* GPT Desktop - D.app */,
 				2B60C5902B190D0A00D11386 /* gpt-web-desktopTests.xctest */,
 				2B60C59A2B190D0A00D11386 /* gpt-web-desktopUITests.xctest */,
 			);
@@ -141,7 +141,7 @@
 			);
 			name = "gpt-web-desktop";
 			productName = "gpt-web-desktop";
-			productReference = 2B60C57F2B190D0900D11386 /* ChatGPT.app */;
+			productReference = 2B60C57F2B190D0900D11386 /* GPT Desktop - D.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2B60C58F2B190D0A00D11386 /* gpt-web-desktopTests */ = {
@@ -445,7 +445,7 @@
 				);
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "KJ.gpt-web-desktop";
-				PRODUCT_NAME = ChatGPT;
+				PRODUCT_NAME = "GPT Desktop - D";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -470,7 +470,7 @@
 				);
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "KJ.gpt-web-desktop";
-				PRODUCT_NAME = ChatGPT;
+				PRODUCT_NAME = "GPT Desktop";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};

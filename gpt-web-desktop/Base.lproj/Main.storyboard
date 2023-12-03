@@ -118,7 +118,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ChatGPT" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="GPT_Desktop" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,7 +148,7 @@
         <!--My View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="MainApp" id="XfG-lQ-9wD" customClass="MyViewController" customModule="ChatGPT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainApp" id="XfG-lQ-9wD" customClass="MyViewController" customModule="GPT_Desktop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="363" height="751"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -204,7 +204,7 @@
         <!--Preferences View Controller-->
         <scene sceneID="8gR-kR-agX">
             <objects>
-                <viewController storyboardIdentifier="PreferencesWindowController" id="vo8-qD-Ufy" customClass="PreferencesViewController" customModule="ChatGPT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PreferencesWindowController" id="vo8-qD-Ufy" customClass="PreferencesViewController" customModule="GPT_Desktop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="QHS-6R-6al">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="90"/>
                         <autoresizingMask key="autoresizingMask"/>
