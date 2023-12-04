@@ -13,8 +13,15 @@ struct ChatBot{
 }
 
 var chatGPT = ChatBot(name:"ChatGPT", data:"https://www.chatgpt.com/")
-var wyyx = ChatBot(name:"文言一心", data:"https://yiyan.baidu.com")
-var google = ChatBot(name:"Google", data:"https://www.google.com")
+var claude = ChatBot(name:"Claude", data:"https://claude.ai/login?returnTo=%2F")
+var google = ChatBot(name:"Google", data:"https://bard.google.com")
+var bing = ChatBot(name:"Bing", data:"https://www.bing.com/search?form=MY0291&OCID=MY0291&q=Bing+AI&showconv=1")
+var playground = ChatBot(name:"Playground", data:"https://playgroundai.com")  // Picture
+var canva = ChatBot(name:"Canva", data:"https://www.canva.com/")  // Image
+var wyyx = ChatBot(name:"问言一心", data:"https://yiyan.baidu.com")
+var tyqw = ChatBot(name:"通义千问", data:"https://qianwen.aliyun.com")
+var poe = ChatBot(name:"POE", data:"https://poe.com")  // A combination of chatbots
+var notion = ChatBot(name:"Notion", data:"www.notion.so")  // Note
 
 var targetWebsite: String?
 
@@ -25,7 +32,8 @@ class PreferencesViewController: NSViewController {
     var preferencesWindowController: NSWindowController?
 
     // Add website options
-    let websiteOptions = ["ChatGPT", "文言一心", "Google"]
+    let websiteOptions = ["ChatGPT", "Claude", "Google", "Bing", "文言一心", "通义千问",
+    "Playground", "Canva", "POE", "Notion"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +58,8 @@ class PreferencesViewController: NSViewController {
             targetURL = wyyx.data
         case google.name:
             targetURL = google.data
+        case bing.name:
+            targetURL = bing.data
         default:
             targetURL = chatGPT.data
         }
