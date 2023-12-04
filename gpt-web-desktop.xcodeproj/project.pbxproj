@@ -35,7 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B60C57F2B190D0900D11386 /* GPT Desktop - D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GPT Desktop - D.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B4D49CE2B1E3E280059E03F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B60C57F2B190D0900D11386 /* GPT DEBUG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GPT DEBUG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B60C5822B190D0900D11386 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B60C5842B190D0900D11386 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B60C5862B190D0A00D11386 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,7 +88,7 @@
 		2B60C5802B190D0900D11386 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B60C57F2B190D0900D11386 /* GPT Desktop - D.app */,
+				2B60C57F2B190D0900D11386 /* GPT DEBUG.app */,
 				2B60C5902B190D0A00D11386 /* gpt-web-desktopTests.xctest */,
 				2B60C59A2B190D0A00D11386 /* gpt-web-desktopUITests.xctest */,
 			);
@@ -97,6 +98,7 @@
 		2B60C5812B190D0900D11386 /* gpt-web-desktop */ = {
 			isa = PBXGroup;
 			children = (
+				2B4D49CE2B1E3E280059E03F /* Info.plist */,
 				2B60C5822B190D0900D11386 /* AppDelegate.swift */,
 				2B60C5842B190D0900D11386 /* ViewController.swift */,
 				2B60C5862B190D0A00D11386 /* Assets.xcassets */,
@@ -141,7 +143,7 @@
 			);
 			name = "gpt-web-desktop";
 			productName = "gpt-web-desktop";
-			productReference = 2B60C57F2B190D0900D11386 /* GPT Desktop - D.app */;
+			productReference = 2B60C57F2B190D0900D11386 /* GPT DEBUG.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2B60C58F2B190D0A00D11386 /* gpt-web-desktopTests */ = {
@@ -434,9 +436,12 @@
 				CODE_SIGN_ENTITLEMENTS = "gpt-web-desktop/gpt_web_desktop.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 20;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = "gpt-web-desktop/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GPT Desktop";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2023 Kuang Jiang";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -444,9 +449,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "KJ.gpt-web-desktop";
-				PRODUCT_NAME = "GPT Desktop - D";
+				PRODUCT_NAME = "GPT DEBUG";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -460,9 +465,12 @@
 				CODE_SIGN_ENTITLEMENTS = "gpt-web-desktop/gpt_web_desktop.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 20;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = "gpt-web-desktop/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GPT Desktop";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2023 Kuang Jiang";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +478,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "KJ.gpt-web-desktop";
 				PRODUCT_NAME = "GPT Desktop";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -60,6 +60,8 @@ class MyViewController: NSViewController, WKNavigationDelegate {
         restoreWindowState()
     }
     
+    // MARK: URL Behavior
+    
     // Load URL
     func loadURL(_ urlString: String) {
         if let url = URL(string: urlString) {
@@ -67,6 +69,8 @@ class MyViewController: NSViewController, WKNavigationDelegate {
             myWebView.load(request)
         }
     }
+    
+    // MARK: Window Size
 
     // Set Window Size
     private func setWindowSize() throws {

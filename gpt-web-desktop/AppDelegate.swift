@@ -19,6 +19,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Add any additional setup code here.
     }
     
+    // MARK: Window Behavior
+    
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application.
     }
@@ -59,6 +61,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
     
+    // MARK: Dock Menu
+    
     // Function to handle right-click menu item action
     @objc func openNewWindow(_ sender: Any?) {
         showMainWindow()
@@ -75,20 +79,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return menu
     }
     
+    // MARK: Application Exit
+    
     @IBAction func quit(_ sender: Any) {
         NSApp.terminate(sender)
     }
     
+    // MARK: About Panel
+    
     @IBAction func aboutPanel(_ sender: Any) {
         let appInfo: [String: Any] = [
-            "ApplicationName": "ChatGPT Web Viewer",
-            "ApplicationVersion": "1.0",
-            "ApplicationCopyright": "© 2023 Kuang Jiang",
-            "ApplicationDescription": "A Simple Web Viewer for web-based interaction with ChatGPT."
-        ]
-        
-        NSApp.orderFrontStandardAboutPanel(appInfo)
+                    "ApplicationName": "ChatGPT Web Viewer",
+                    "ApplicationVersion": "1.0",
+                    "ApplicationCopyright": "© 2023 Kuang Jiang",
+                    "ApplicationDescription": "Bring some GPT right to the desktop."
+                ]
+                
+                NSApp.orderFrontStandardAboutPanel(appInfo)
     }
+    
+    // MARK: Preference Panel
     
     @IBAction func showPreferencesPanel(_ sender: Any) {
         if preferencesWindowController == nil {
@@ -96,7 +106,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if let preferencesViewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PreferencesWindowController")) as? NSViewController{
                 preferenceWindow = NSWindow(contentViewController: preferencesViewController)
                 
-                preferenceWindow.title = "Preference"
+                preferenceWindow.title = "Settings"
                 
                 preferenceWindow.makeKeyAndOrderFront(nil)
             }

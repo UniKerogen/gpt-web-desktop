@@ -19,13 +19,13 @@
                                         <menuItem title="About GPT Desktop" id="5kV-Vb-QxS" userLabel="About ChatGPT">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="aboutPanel:" target="Voe-Tx-rLC" id="b6x-TI-eUt"/>
+                                                <action selector="aboutPanel:" target="Voe-Tx-rLC" id="Ve7-xp-jGn"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences..." keyEquivalent="," id="BOF-NM-1cW">
+                                        <menuItem title="Settings..." keyEquivalent="," id="BOF-NM-1cW">
                                             <connections>
-                                                <action selector="showPreferencesPanel:" target="Voe-Tx-rLC" id="MR9-3e-EOU"/>
+                                                <action selector="showPreferencesPanel:" target="Voe-Tx-rLC" id="63i-Y2-ADF"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
@@ -118,7 +118,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="GPT_Desktop" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="GPT_DEBUG" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,7 +148,7 @@
         <!--My View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="MainApp" id="XfG-lQ-9wD" customClass="MyViewController" customModule="GPT_Desktop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainApp" id="XfG-lQ-9wD" customClass="MyViewController" customModule="GPT_DEBUG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="363" height="751"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -204,7 +204,7 @@
         <!--Preferences View Controller-->
         <scene sceneID="8gR-kR-agX">
             <objects>
-                <viewController storyboardIdentifier="PreferencesWindowController" id="vo8-qD-Ufy" customClass="PreferencesViewController" customModule="GPT_Desktop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PreferencesWindowController" id="vo8-qD-Ufy" customClass="PreferencesViewController" customModule="GPT_DEBUG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="QHS-6R-6al">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="107"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -246,7 +246,18 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="saveAndOpen:" target="vo8-qD-Ufy" id="HRe-qC-HbZ"/>
+                                    <action selector="saveAndOpenNewWindow:" target="vo8-qD-Ufy" id="TiG-mV-hnZ"/>
+                                </connections>
+                            </button>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xXA-Is-Vdn">
+                                <rect key="frame" x="120" y="16" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uzH-2L-7f1">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="showTooltip:" target="vo8-qD-Ufy" id="eqS-9L-Tsv"/>
                                 </connections>
                             </button>
                         </subviews>

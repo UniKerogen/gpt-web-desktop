@@ -29,6 +29,8 @@ class PreferencesViewController: NSViewController {
 
     @IBOutlet weak var websiteComboBox: NSComboBox!
     
+    @IBOutlet weak var helpButton: NSButton!
+    
     var preferencesWindowController: NSWindowController?
 
     // Add website options
@@ -47,6 +49,8 @@ class PreferencesViewController: NSViewController {
             websiteComboBox.stringValue = websiteOptions.first ?? ""
         }
     }
+    
+    //MARK: Chat Bot Preference
     
     func convertWebsiteNameToURL(_ websiteName: String) -> String {
         switch websiteName {
@@ -89,8 +93,22 @@ class PreferencesViewController: NSViewController {
             let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
             preferencesWindowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PreferencesWindowController")) as? NSWindowController
         }
-
         preferencesWindowController?.showWindow(sender)
+    }
+    
+    //MARK: Help Button
+    
+    @IBAction func showTooltip(_ sender: Any) {
+        let alert = NSAlert()
+        alert.messageText = "Help Information"
+        alert.informativeText = """
+        All changed settings will be applied in new window.
+        """
+        alert.alertStyle = .informational
+        
+        alert.beginSheetModal(for: view.window!) { _ in
+            // Code to execute after the alert is dismissed
+        }
     }
 }
 
