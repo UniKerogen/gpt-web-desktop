@@ -206,11 +206,11 @@
             <objects>
                 <viewController storyboardIdentifier="PreferencesWindowController" id="vo8-qD-Ufy" customClass="PreferencesViewController" customModule="GPT_Desktop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="QHS-6R-6al">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="90"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="107"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PLI-ce-gSn">
-                                <rect key="frame" x="18" y="37" width="127" height="16"/>
+                                <rect key="frame" x="18" y="54" width="127" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Current Chat Model:" id="uM8-Tu-qvQ">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -219,7 +219,7 @@
                                 </textFieldCell>
                             </textField>
                             <comboBox focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tl7-mx-HR1">
-                                <rect key="frame" x="150" y="33" width="238" height="23"/>
+                                <rect key="frame" x="150" y="50" width="313" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="--Select--" placeholderString="--Select--" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="SSw-NK-POj">
                                     <font key="font" metaFont="system"/>
@@ -228,14 +228,25 @@
                                 </comboBoxCell>
                             </comboBox>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ExM-2z-GoM">
-                                <rect key="frame" x="386" y="28" width="81" height="32"/>
+                                <rect key="frame" x="144" y="13" width="133" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Change" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c8b-s8-oEY">
+                                <buttonCell key="cell" type="push" title="Save Preference" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c8b-s8-oEY">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="savePreferences:" target="vo8-qD-Ufy" id="eMn-bk-hRo"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UXR-wK-caG">
+                                <rect key="frame" x="272" y="13" width="195" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Save &amp; Open New Window" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rbW-qW-vhm">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="saveAndOpen:" target="vo8-qD-Ufy" id="HRe-qC-HbZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -246,7 +257,7 @@
                 </viewController>
                 <customObject id="cbu-tT-ciI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639" y="591"/>
+            <point key="canvasLocation" x="639" y="599.5"/>
         </scene>
     </scenes>
 </document>

@@ -47,28 +47,41 @@ class PreferencesViewController: NSViewController {
             websiteComboBox.stringValue = websiteOptions.first ?? ""
         }
     }
+    
+    func convertWebsiteNameToURL(_ websiteName: String) -> String {
+        switch websiteName {
+        case chatGPT.name:
+            return chatGPT.data
+        case wyyx.name:
+            return wyyx.data
+        case google.name:
+            return google.data
+        case bing.name:
+            return bing.data
+        default:
+            return chatGPT.data
+        }
+    }
 
     @IBAction func savePreferences(_ sender: Any) {
         // Convert Name to URL
-        let targetURL: String?
-        switch websiteComboBox.stringValue{
-        case chatGPT.name:
-            targetURL = chatGPT.data
-        case wyyx.name:
-            targetURL = wyyx.data
-        case google.name:
-            targetURL = google.data
-        case bing.name:
-            targetURL = bing.data
-        default:
-            targetURL = chatGPT.data
-        }
+        targetWebsite = convertWebsiteNameToURL(websiteComboBox.stringValue)
+        
+        // Save the selected website to UserDefaults
+        UserDefaults.standard.set(websiteComboBox.stringValue, forKey: "SelectedWebsite")
+    }
+    
+    @IBAction func saveAndOpenNewWindow(_ sender: Any) {
+        // Convert Name to URL
+        targetWebsite = convertWebsiteNameToURL(websiteComboBox.stringValue)
         
         // Save the selected website to UserDefaults
         UserDefaults.standard.set(websiteComboBox.stringValue, forKey: "SelectedWebsite")
         
-        // Update the selected website in the existing window controller
-        targetWebsite = targetURL
+        // Show New Window
+        if let appDelegate = NSApplication.shared.delegate as? AppDelegate {
+            appDelegate.showMainWindow()
+        }
     }
     
     @IBAction func showPreferencesWindow(_ sender: Any) {

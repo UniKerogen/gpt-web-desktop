@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    private func showMainWindow() {
+    func showMainWindow() {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         if let viewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("MainApp")) as? NSViewController {
             myWindow = NSWindow(contentViewController: viewController)
