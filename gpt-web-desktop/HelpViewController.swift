@@ -11,6 +11,8 @@ class HelpViewController: NSViewController {
     
     var helpWindowController: NSWindowController?
     
+    @IBOutlet weak var tipTabView: NSTabView!
+    
     @IBOutlet weak var basicTextView: NSScrollView!
     
     override func viewDidLoad() {
@@ -38,12 +40,9 @@ class HelpViewController: NSViewController {
                 // Set up the scroll view with the text view as the document view
                 scrollView.documentView = textView
                 
-                // Adjust appearance
-                if let parentView = scrollView.superview {
-                    scrollView.appearance = parentView.effectiveAppearance
-                } else {
-                    scrollView.appearance = NSApp.effectiveAppearance
-                }
+                // Appearance Adjustment
+                textView.appearance = tipTabView.effectiveAppearance
+                textView.backgroundColor = NSColor.clear
             } catch {
                 print("Error loading RTF file: \(error)")
             }

@@ -259,7 +259,6 @@
                                                                 <color key="insertionPointColor" name="textInsertionPointColor" catalog="System" colorSpace="catalog"/>
                                                             </textView>
                                                         </subviews>
-                                                        <color key="backgroundColor" name="systemFillColor" catalog="System" colorSpace="catalog"/>
                                                     </clipView>
                                                     <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Zeb-af-5dl">
                                                         <rect key="frame" x="-100" y="-100" width="240" height="16"/>
@@ -327,6 +326,7 @@
                     </view>
                     <connections>
                         <outlet property="basicTextView" destination="32C-FK-oDG" id="PxB-1g-0gD"/>
+                        <outlet property="tipTabView" destination="Ovz-94-Gr1" id="e03-3T-g3L"/>
                     </connections>
                 </viewController>
                 <customObject id="rUF-zH-NU3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
