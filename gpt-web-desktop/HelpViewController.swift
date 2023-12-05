@@ -11,29 +11,42 @@ class HelpViewController: NSViewController {
     
     var helpWindowController: NSWindowController?
     
-    @IBOutlet weak var tableView: NSScrollView!
+    @IBOutlet weak var basicTextView: NSScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Additional setup code if needed
-        print("Tips Loaded")
+        // MARK: Basic Tab
+        setupTextViewFromFile(fileName: "basicTab", scrollView: basicTextView)
     }
-}
-
-extension HelpViewController: NSTableViewDataSource {
-    func numberOfRows(in tableView: NSTableView) -> Int {
-        // Return the number of rows you want in the table view
-        return 3 // Replace with the actual number of rows
-    }
-
-    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        // Provide the view for each cell in the table view
-        if let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier("MyCell"), owner: self) as? NSTableCellView {
-            // Customize the cell view here
-            cellView.textField?.stringValue = "Row \(row + 1)"
-            return cellView
+    
+    func setupTextViewFromFile(fileName: String, scrollView: NSScrollView) {
+        // Load the content from the specified RTF file and convert it to plain text
+        if let path = Bundle.main.path(forResource: fileName, ofType: "rtf") {
+            do {
+                let attributedString = try NSAttributedString(url: URL(fileURLWithPath: path), options: [:], documentAttributes: nil)
+                let plainText = attributedString.string
+                
+                // Create a text view and set its string
+                let textView = NSTextView()
+                textView.string = plainText
+                
+                // Disable text input
+                textView.isEditable = false
+                
+                // Set up the scroll view with the text view as the document view
+                scrollView.documentView = textView
+                
+                // Adjust appearance
+                if let parentView = scrollView.superview {
+                    scrollView.appearance = parentView.effectiveAppearance
+                } else {
+                    scrollView.appearance = NSApp.effectiveAppearance
+                }
+            } catch {
+                print("Error loading RTF file: \(error)")
+            }
         }
-        return nil
     }
 }
