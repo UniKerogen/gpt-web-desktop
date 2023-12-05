@@ -15,8 +15,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var preferencesWindowController: NSWindowController?
     var preferenceWindow: NSWindow!
     
+    var helpWindowController: NSWindowController?
+    var helpWindow: NSWindow?
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Add any additional setup code here.
+        
     }
     
     // MARK: Window Behavior
@@ -61,6 +65,39 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
     
+    // MARK: Help Window
+    @objc func openHelpView() {
+        print("To Show Help View")
+
+        // Create helpWindowController only if it doesn't exist
+        helpWindowController = helpWindowController ?? {
+            let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+
+            guard let helpViewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("HelpWindowController")) as? HelpViewController else {
+                return nil
+            }
+
+            let controller = NSWindowController(window: nil)
+            controller.contentViewController = helpViewController
+            controller.window?.title = "Tips"
+            
+            return controller
+        }()
+
+        // Ensure helpWindowController is not nil
+        guard let windowController = helpWindowController else {
+            return
+        }
+
+        if windowController.window == nil {
+            // If the window is nil, create a default one
+            windowController.window = NSWindow(contentViewController: windowController.contentViewController!)
+            windowController.window?.title = "Tips"
+        }
+
+        windowController.showWindow(nil)
+    }
+    
     // MARK: Dock Menu
     
     // Function to handle right-click menu item action
@@ -72,9 +109,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Create a custom right-click menu
         let menu = NSMenu()
         
-        // Add menu item to open a new window
+        // Open New Window
         let openNewWindowItem = NSMenuItem(title: "Open New Window", action: #selector(openNewWindow(_:)), keyEquivalent: "")
         menu.addItem(openNewWindowItem)
+        // Help
+        let openHelpViewItem = NSMenuItem(title: "Tips...", action: #selector(openHelpView), keyEquivalent: "")
+        menu.addItem(openHelpViewItem)
         
         return menu
     }
