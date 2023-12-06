@@ -280,7 +280,7 @@
                                     </tabViewItem>
                                     <tabViewItem label="Chatting" identifier="" id="cFj-0C-IhR">
                                         <view key="view" id="Bsh-QN-8kj">
-                                            <rect key="frame" x="10" y="33" width="434" height="515"/>
+                                            <rect key="frame" x="10" y="33" width="554" height="495"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                     </tabViewItem>

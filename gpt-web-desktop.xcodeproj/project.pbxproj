@@ -17,6 +17,7 @@
 		2B60C6242B1B098500D11386 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B60C6232B1B098500D11386 /* PreferencesViewController.swift */; };
 		2BE9CE582B1EC5F10007ED94 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE9CE572B1EC5F10007ED94 /* HelpViewController.swift */; };
 		2BE9CE5B2B1F91E40007ED94 /* basicTab.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2BE9CE5A2B1F91E40007ED94 /* basicTab.rtf */; };
+		2BE9CE5E2B20E2720007ED94 /* chattingTab.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2BE9CE5D2B20E2720007ED94 /* chattingTab.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		2BE9CE572B1EC5F10007ED94 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		2BE9CE5A2B1F91E40007ED94 /* basicTab.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = basicTab.rtf; sourceTree = "<group>"; };
 		2BE9CE5C2B1F922B0007ED94 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2BE9CE5D2B20E2720007ED94 /* chattingTab.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = chattingTab.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		2B60C5762B190D0900D11386 = {
 			isa = PBXGroup;
 			children = (
+				2BE9CE5C2B1F922B0007ED94 /* README.md */,
 				2B60C5812B190D0900D11386 /* gpt-web-desktop */,
 				2B60C5932B190D0A00D11386 /* gpt-web-desktopTests */,
 				2B60C59D2B190D0A00D11386 /* gpt-web-desktopUITests */,
@@ -112,7 +115,6 @@
 				2B60C58B2B190D0A00D11386 /* gpt_web_desktop.entitlements */,
 				2B60C6232B1B098500D11386 /* PreferencesViewController.swift */,
 				2BE9CE572B1EC5F10007ED94 /* HelpViewController.swift */,
-				2BE9CE5C2B1F922B0007ED94 /* README.md */,
 			);
 			path = "gpt-web-desktop";
 			sourceTree = "<group>";
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				2BE9CE5A2B1F91E40007ED94 /* basicTab.rtf */,
+				2BE9CE5D2B20E2720007ED94 /* chattingTab.rtf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			files = (
 				2B60C5872B190D0A00D11386 /* Assets.xcassets in Resources */,
 				2BE9CE5B2B1F91E40007ED94 /* basicTab.rtf in Resources */,
+				2BE9CE5E2B20E2720007ED94 /* chattingTab.rtf in Resources */,
 				2B60C58A2B190D0A00D11386 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
