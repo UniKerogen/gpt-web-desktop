@@ -67,7 +67,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     // MARK: Help Window
     @objc func openHelpView() {
-
         // Create helpWindowController only if it doesn't exist
         helpWindowController = helpWindowController ?? {
             let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
@@ -79,7 +78,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let controller = NSWindowController(window: nil)
             controller.contentViewController = helpViewController
             controller.window?.title = "Tips"
-            
+
+            // Disable resizing for helpWindow
+            controller.window?.styleMask.remove(.resizable)
+
             return controller
         }()
 
@@ -92,6 +94,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             // If the window is nil, create a default one
             windowController.window = NSWindow(contentViewController: windowController.contentViewController!)
             windowController.window?.title = "Tips"
+
+            // Disable resizing for helpWindow
+            windowController.window?.styleMask.remove(.resizable)
         }
 
         windowController.showWindow(nil)

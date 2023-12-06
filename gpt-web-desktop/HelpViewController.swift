@@ -28,14 +28,17 @@ class HelpViewController: NSViewController {
         if let path = Bundle.main.path(forResource: fileName, ofType: "rtf") {
             do {
                 let attributedString = try NSAttributedString(url: URL(fileURLWithPath: path), options: [:], documentAttributes: nil)
-                let plainText = attributedString.string
                 
-                // Create a text view and set its string
+                // Create a text view and set its attributed string
                 let textView = NSTextView()
-                textView.string = plainText
+                textView.textStorage?.setAttributedString(attributedString)
                 
                 // Disable text input
                 textView.isEditable = false
+                
+                // Enable auto-wrapping
+                textView.textContainer?.widthTracksTextView = true
+                textView.textContainer?.heightTracksTextView = true
                 
                 // Set up the scroll view with the text view as the document view
                 scrollView.documentView = textView
@@ -43,6 +46,12 @@ class HelpViewController: NSViewController {
                 // Appearance Adjustment
                 textView.appearance = tipTabView.effectiveAppearance
                 textView.backgroundColor = NSColor.clear
+                
+                // Fine-tune appearance for dark mode
+                if NSApp.effectiveAppearance.name == .darkAqua {
+                    textView.textColor = NSColor.white
+                }
+                
             } catch {
                 print("Error loading RTF file: \(error)")
             }
