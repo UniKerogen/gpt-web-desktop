@@ -17,6 +17,7 @@ class HelpViewController: NSViewController {
     @IBOutlet weak var basicTextView: NSScrollView!
     @IBOutlet weak var chattingTab: NSScrollView!
     @IBOutlet weak var codingTab: NSScrollView!
+    @IBOutlet weak var writingTab: NSScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,10 @@ class HelpViewController: NSViewController {
         // Create attributes with the paragraph style
         let body: [NSAttributedString.Key: Any] = [
             .font: NSFont.systemFont(ofSize: 14),
+            .paragraphStyle: paragraphStyle
+        ]
+        let boldbody: [NSAttributedString.Key: Any] = [
+            .font: NSFont.boldSystemFont(ofSize: 14),
             .paragraphStyle: paragraphStyle
         ]
         let title: [NSAttributedString.Key: Any] = [
@@ -205,6 +210,28 @@ class HelpViewController: NSViewController {
         codingString.append(NSAttributedString(string: "    understanding the project.]\n",
                                                attributes: exampleBody))
         displayText(textString: codingString, scrollView: codingTab)
+        
+        // MARK: Rendering
+        
+        // MARK: Writing
+        let writingString = NSMutableAttributedString()
+        writingString.append(NSAttributedString(string:"So examples on information needed by GPTs for generating paragraphs", attributes: body))
+        writingString.append(NSAttributedString(string: "\n\n", attributes: body))
+        writingString.append(NSAttributedString(string:"--- Cover Letter ---", attributes: title))
+        writingString.append(NSAttributedString(string: "\n", attributes: body))
+        writingString.append(NSAttributedString(string: "1. Position Information:\n", attributes: label1))
+        writingString.append(NSAttributedString(string: "Job Title: ", attributes: boldbody))
+        writingString.append(NSAttributedString(string: " [Specify the job title of the position you're applying for.]\n", attributes: body))
+        writingString.append(NSAttributedString(string: "Company Name: ", attributes: boldbody))
+        writingString.append(NSAttributedString(string: " [Provide the name of the company you're applying to.]\n", attributes: body))
+        writingString.append(NSAttributedString(string: "Job Reference Number (if applicable): ", attributes: boldbody))
+        writingString.append(NSAttributedString(string: " [Include any reference number\n                                                                        mentioned in the job posting.]\n\n", attributes: body))
+        writingString.append(NSAttributedString(string: "2. Your Personal Information:\n", attributes: label1))
+        writingString.append(NSAttributedString(string: "Your Full Name: ", attributes: boldbody))
+        writingString.append(NSAttributedString(string: " [Provide your full name as you want it to appear in the cover\n                               letter.]\n", attributes: body))
+        writingString.append(NSAttributedString(string: "Contact Information: ", attributes: boldbody))
+        writingString.append(NSAttributedString(string: " [Include your phone number and professional email\n                                         address.]\n", attributes: body))
+        displayText(textString: writingString, scrollView: writingTab)
 
     }
     
