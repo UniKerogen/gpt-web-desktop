@@ -185,12 +185,24 @@ class HelpViewController: NSViewController {
         codingString.append(NSAttributedString(string: "    [List the key features or functionalities you envision for the program.]\n",
                                                attributes: exampleBody))
         codingString.append(NSAttributedString(string: "\n", attributes: body))
-        codingString.append(NSAttributedString(string: "Technical Requirements::\n", attributes: label1))
+        codingString.append(NSAttributedString(string: "Technical Requirements:\n", attributes: label1))
         codingString.append(NSAttributedString(string: "    [Specify any technical requirements, such as programming language preference,\n",
                                                attributes: exampleBody))
         codingString.append(NSAttributedString(string: "    platform compatibility (e.g., macOS, iOS, Windows), and any specific frameworks or\n",
                                                attributes: exampleBody))
         codingString.append(NSAttributedString(string: "    libraries you intend to use.]\n",
+                                               attributes: exampleBody))
+        codingString.append(NSAttributedString(string: "\n", attributes: body))
+        codingString.append(NSAttributedString(string: "Design Considerations:\n", attributes: label1))
+        codingString.append(NSAttributedString(string: "    [Highlight any design preferences or considerations you have for the program's user\n",
+                                               attributes: exampleBody))
+        codingString.append(NSAttributedString(string: "    interface or overall architecture.]\n",
+                                               attributes: exampleBody))
+        codingString.append(NSAttributedString(string: "\n", attributes: body))
+        codingString.append(NSAttributedString(string: "Additional Information:\n", attributes: label1))
+        codingString.append(NSAttributedString(string: "    [Include any additional details that you think may be relevant or helpful for\n",
+                                               attributes: exampleBody))
+        codingString.append(NSAttributedString(string: "    understanding the project.]\n",
                                                attributes: exampleBody))
         displayText(textString: codingString, scrollView: codingTab)
 
