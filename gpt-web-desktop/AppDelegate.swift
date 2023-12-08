@@ -66,6 +66,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     // MARK: Help Window
+    
     @objc func openHelpView() {
         // Create helpWindowController only if it doesn't exist
         helpWindowController = helpWindowController ?? {
