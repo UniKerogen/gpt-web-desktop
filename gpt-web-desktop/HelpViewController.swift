@@ -18,6 +18,7 @@ class HelpViewController: NSViewController {
     @IBOutlet weak var chattingTab: NSScrollView!
     @IBOutlet weak var codingTab: NSScrollView!
     @IBOutlet weak var writingTab: NSScrollView!
+    @IBOutlet weak var renderingTab: NSScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -212,6 +213,10 @@ class HelpViewController: NSViewController {
         displayText(textString: codingString, scrollView: codingTab)
         
         // MARK: Rendering
+        let renderingString = NSMutableAttributedString()
+        renderingString.append(NSAttributedString(string:"Information needed to generate diagrams\n", attributes: body))
+        displayText(textString: renderingString, scrollView: renderingTab)
+        
         
         // MARK: Writing
         let writingString = NSMutableAttributedString()
