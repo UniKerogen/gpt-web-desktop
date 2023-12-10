@@ -55,7 +55,6 @@
 		2BE9CE5A2B1F91E40007ED94 /* basicTab.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = basicTab.rtf; sourceTree = "<group>"; };
 		2BE9CE5C2B1F922B0007ED94 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2BE9CE632B20EE7C0007ED94 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		2BE9CE642B20EEBD0007ED94 /* basicTab.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = basicTab.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +142,6 @@
 			children = (
 				2BE9CE5A2B1F91E40007ED94 /* basicTab.rtf */,
 				2BE9CE632B20EE7C0007ED94 /* README.md */,
-				2BE9CE642B20EEBD0007ED94 /* basicTab.md */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -466,7 +464,7 @@
 				CODE_SIGN_ENTITLEMENTS = "gpt-web-desktop/gpt_web_desktop.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 31;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "gpt-web-desktop/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "GPT Desktop";
@@ -495,7 +493,7 @@
 				CODE_SIGN_ENTITLEMENTS = "gpt-web-desktop/gpt_web_desktop.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 31;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "gpt-web-desktop/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "GPT Desktop";

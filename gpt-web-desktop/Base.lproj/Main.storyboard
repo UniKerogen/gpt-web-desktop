@@ -407,7 +407,7 @@
                                                     <rect key="frame" x="20" y="20" width="514" height="455"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="JE4-ih-QLQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="514" height="455"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView wantsLayer="YES" verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="ZLo-ZP-h4S">
                                                                 <rect key="frame" x="0.0" y="0.0" width="514" height="455"/>
@@ -464,7 +464,7 @@
                         <outlet property="basicTextView" destination="32C-FK-oDG" id="PxB-1g-0gD"/>
                         <outlet property="chattingTab" destination="YL0-9A-Uba" id="L6B-1W-gvk"/>
                         <outlet property="codingTab" destination="J8J-FV-Mdi" id="qek-RX-HQf"/>
-                        <outlet property="renderingRab" destination="ckG-A7-XSL" id="Kfn-0W-OEn"/>
+                        <outlet property="renderingTab" destination="ckG-A7-XSL" id="M3W-X4-hwq"/>
                         <outlet property="tipTabView" destination="Ovz-94-Gr1" id="e03-3T-g3L"/>
                         <outlet property="writingTab" destination="67b-Wn-5he" id="bv1-SF-ZdO"/>
                     </connections>

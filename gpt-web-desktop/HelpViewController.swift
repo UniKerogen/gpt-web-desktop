@@ -181,7 +181,7 @@ class HelpViewController: NSViewController {
         
         // MARK: Coding Tab
         let codingString = NSMutableAttributedString()
-        codingString.append(NSAttributedString(string:"When crafting a message to ChatGPT regarding designing and writing code for\na program, it's important to be clear and provide as much relevant information\nas possible.\n", attributes: body))
+        codingString.append(NSAttributedString(string:"When crafting a message to GPT regarding designing and writing code for a\nprogram, it's important to be clear and provide as much relevant information\nas possible.\n", attributes: body))
         codingString.append(NSAttributedString(string: "\n", attributes: body))
         codingString.append(NSAttributedString(string: "Program Purpose:\n", attributes: label1))
         codingString.append(NSAttributedString(string: "    [Provide a concise description of the program's main purpose and functionality.]\n",
@@ -215,6 +215,8 @@ class HelpViewController: NSViewController {
         // MARK: Rendering
         let renderingString = NSMutableAttributedString()
         renderingString.append(NSAttributedString(string:"Information needed to generate diagrams\n", attributes: body))
+        renderingString.append(NSAttributedString(string:"\n", attributes: body))
+        renderingString.append(NSAttributedString(string:"Please note that the quality and accuracy of the generated images depend\non the clarity and specificity of the prompts.\n", attributes: body))
         displayText(textString: renderingString, scrollView: renderingTab)
         
         
