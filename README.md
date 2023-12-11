@@ -8,6 +8,7 @@ A simple application in macOS that brings some of the most popular chatbots righ
 - [x] Multiple ChatBot for Selection
 - [x] Open ChatBots in Multiple Window
 - [x] Baked-in Tips for Chatting with ChatBots
+- [x] Quick Selection for ChatBots in Dock Menu
 
 ## App Screens
 
@@ -19,5 +20,4 @@ A simple application in macOS that brings some of the most popular chatbots righ
 
 ## Potential Update
 - Menu Bar App Access
-- Quick Selection for ChatBots in Dock Menu
 
