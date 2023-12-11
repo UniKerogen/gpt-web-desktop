@@ -2,7 +2,7 @@
 Bring GPTs right to the Desktop
 
 ## OverView
-A simple application in macOS that brings some of the most popular chatbot right to desktop. Selection of chatbots are done in the Settings of the app, and some tips are also avaliable in Dock Menu
+A simple application in macOS that brings some of the most popular chatbots right to desktop. Selection of chatbots are done in the Settings of the app, and some tips are also avaliable via Dock Menu.
 
 ## Features
 - [x] Multiple ChatBot for Selection
