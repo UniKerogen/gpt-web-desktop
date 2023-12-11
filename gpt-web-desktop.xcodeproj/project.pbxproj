@@ -464,7 +464,7 @@
 				CODE_SIGN_ENTITLEMENTS = "gpt-web-desktop/gpt_web_desktop.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 34;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "gpt-web-desktop/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "GPT Desktop";
@@ -477,7 +477,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "KJ.gpt-web-desktop";
 				PRODUCT_NAME = "GPT DEBUG";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -493,7 +493,7 @@
 				CODE_SIGN_ENTITLEMENTS = "gpt-web-desktop/gpt_web_desktop.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 34;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "gpt-web-desktop/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "GPT Desktop";
@@ -506,7 +506,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "KJ.gpt-web-desktop";
 				PRODUCT_NAME = "GPT Desktop";
 				SWIFT_EMIT_LOC_STRINGS = YES;

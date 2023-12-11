@@ -287,7 +287,7 @@
                                                     <rect key="frame" x="20" y="20" width="514" height="455"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="5W9-Kp-tgY">
                                                         <rect key="frame" x="0.0" y="0.0" width="514" height="455"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView wantsLayer="YES" verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="87Z-6V-ZlE">
                                                                 <rect key="frame" x="0.0" y="0.0" width="514" height="455"/>
@@ -327,7 +327,7 @@
                                                     <rect key="frame" x="20" y="20" width="514" height="455"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="RdM-a2-UtJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="514" height="455"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView wantsLayer="YES" verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Vfo-Wl-SGs">
                                                                 <rect key="frame" x="0.0" y="0.0" width="514" height="455"/>
@@ -367,7 +367,7 @@
                                                     <rect key="frame" x="20" y="20" width="514" height="455"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="KlW-Un-mTE">
                                                         <rect key="frame" x="0.0" y="0.0" width="514" height="455"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView wantsLayer="YES" verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="IPT-g9-WQu">
                                                                 <rect key="frame" x="0.0" y="0.0" width="514" height="455"/>
@@ -407,7 +407,7 @@
                                                     <rect key="frame" x="20" y="20" width="514" height="455"/>
                                                     <clipView key="contentView" drawsBackground="NO" id="JE4-ih-QLQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="514" height="455"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView wantsLayer="YES" verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="ZLo-ZP-h4S">
                                                                 <rect key="frame" x="0.0" y="0.0" width="514" height="455"/>

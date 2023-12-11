@@ -7,6 +7,8 @@
 
 import Cocoa
 
+var tempTargetWebsite: String?
+
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
     
@@ -117,11 +119,54 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Open New Window
         let openNewWindowItem = NSMenuItem(title: "Open New Window", action: #selector(openNewWindow(_:)), keyEquivalent: "")
         menu.addItem(openNewWindowItem)
+        // Separator
+        menu.addItem(NSMenuItem.separator())
+        // Single Use Menu
+        let openBot1Item = NSMenuItem(title: "Open ChatGPT...", action: #selector(openChatGPT), keyEquivalent: "")
+        menu.addItem(openBot1Item)
+        let openBot2Item = NSMenuItem(title: "Open Bing...", action: #selector(openBing), keyEquivalent: "")
+        menu.addItem(openBot2Item)
+        let openBot3Item = NSMenuItem(title: "Open 通义千问...", action: #selector(opentyqw), keyEquivalent: "")
+        menu.addItem(openBot3Item)
+        // Separator
+        menu.addItem(NSMenuItem.separator())
         // Help
         let openHelpViewItem = NSMenuItem(title: "Tips...", action: #selector(openHelpView), keyEquivalent: "")
         menu.addItem(openHelpViewItem)
         
         return menu
+    }
+    
+    // MARK: Single Use Window
+    @objc func openChatGPT() {
+        openTempWindow(target: chatGPT.data)
+    }
+    
+    @objc func openClaude() {
+        openTempWindow(target: claude.data)
+    }
+    
+    @objc func openBard() {
+        openTempWindow(target: google.data)
+    }
+    
+    @objc func openBing() {
+        openTempWindow(target: bing.data)
+    }
+    
+    @objc func opentyqw() {
+        openTempWindow(target: tyqw.data)
+    }
+    
+    private func openTempWindow(target: String) {
+        // Set temp value of website
+        tempTargetWebsite = targetWebsite
+        targetWebsite = target
+        showMainWindow()
+        
+        // Reset temp value
+        targetWebsite = tempTargetWebsite
+        tempTargetWebsite = nil
     }
     
     // MARK: Application Exit
@@ -135,7 +180,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func aboutPanel(_ sender: Any) {
         let appInfo: [String: Any] = [
                     "ApplicationName": "ChatGPT Web Viewer",
-                    "ApplicationVersion": "1.0",
+                    "ApplicationVersion": "2.0",
                     "ApplicationCopyright": "© 2023 Kuang Jiang",
                     "ApplicationDescription": "Bring some GPT right to the desktop."
                 ]
