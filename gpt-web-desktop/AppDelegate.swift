@@ -55,6 +55,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 let windowRect = NSRect(x: screenFrame.maxX - defaultSize.width, y: screenFrame.midY - defaultSize.height / 2, width: defaultSize.width, height: defaultSize.height)
                 myWindow.setFrame(windowRect, display: true)
             }
+            // Set the initial window level
+            myWindow.level = .normal
             
             myWindow.makeKeyAndOrderFront(nil)
         }
@@ -194,15 +196,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func showPreferencesPanel(_ sender: Any) {
         if preferencesWindowController == nil {
             let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-            if let preferencesViewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PreferencesWindowController")) as? NSViewController{
+            if let preferencesViewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PreferencesWindowController")) as? PreferencesViewController {
                 preferenceWindow = NSWindow(contentViewController: preferencesViewController)
-                
+
                 preferenceWindow.title = "Settings"
-                
+
                 preferenceWindow.makeKeyAndOrderFront(nil)
             }
         }
-        
+
         preferencesWindowController?.showWindow(sender)
     }
     

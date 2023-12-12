@@ -1,5 +1,5 @@
 #  GPT Desktop
-Bring GPTs right to the Desktop
+A lightweight tool that brings GPTs right to the Desktop
 
 ## OverView
 A simple application in macOS that brings some of the most popular chatbots right to desktop. Selection of chatbots are done in the Settings of the app, and some tips are also avaliable via Dock Menu.
@@ -9,6 +9,8 @@ A simple application in macOS that brings some of the most popular chatbots righ
 - [x] Open ChatBots in Multiple Window
 - [x] Baked-in Tips for Chatting with ChatBots
 - [x] Quick Selection for ChatBots in Dock Menu
+- [ ] Customizable Global ShortCut
+- [ ] Window Always On Top
 
 ## App Screens
 

@@ -32,6 +32,8 @@ var targetWebsite: String?
 
 class PreferencesViewController: NSViewController {
 
+    @IBOutlet weak var preferenceTabs: NSTabView!
+    
     @IBOutlet weak var websiteComboBox: NSComboBox!
     
     @IBOutlet weak var helpButton: NSButton!
@@ -133,6 +135,22 @@ class PreferencesViewController: NSViewController {
         
         alert.beginSheetModal(for: view.window!) { _ in
             // Code to execute after the alert is dismissed
+        }
+    }
+    
+    // MARK: Window Behavior
+    @IBAction func toggleAlwaysOnTop(_ sender: NSButton) {
+        if let appDelegate = NSApplication.shared.delegate as? AppDelegate,
+           let myWindow = appDelegate.myWindow {
+            
+            // Check if the button is checked
+            if sender.state == .on {
+                // Set the window level to be always on top
+                myWindow.level = .floating
+            } else {
+                // Set the window level back to normal
+                myWindow.level = .normal
+            }
         }
     }
 }

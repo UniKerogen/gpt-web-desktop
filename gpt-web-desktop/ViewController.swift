@@ -8,6 +8,7 @@
 import Cocoa
 import WebKit
 
+
 class SizeWrapper: NSObject, NSCoding, NSSecureCoding {
     var size: NSSize
 
@@ -31,7 +32,6 @@ class SizeWrapper: NSObject, NSCoding, NSSecureCoding {
 class MyViewController: NSViewController, WKNavigationDelegate {
     
     @IBOutlet weak var myWebView: WKWebView!
-    
     
     private let windowSizeKey = "ChatGPTWindowSize"
 
@@ -172,4 +172,6 @@ class MyViewController: NSViewController, WKNavigationDelegate {
         }
     }
     
+    // MARK: ViewControllerDelegate - Window Always On Top
+
 }
