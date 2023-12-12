@@ -12,6 +12,11 @@ A simple application in macOS that brings some of the most popular chatbots righ
 
 ## App Screens
 
+
+
+## System Requirement
+- macOS 14+
+
 ## Usage
 1. Download the latest release of DMG file
 2. Open the DMG file and move the app to a desired location
