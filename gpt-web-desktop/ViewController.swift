@@ -154,4 +154,22 @@ class MyViewController: NSViewController, WKNavigationDelegate {
             }
         }
     }
+    
+    // MARK: Clear History
+    // Clear the browsing history
+    func clearWebViewHistory() {
+        // Close all existing windows
+        NSApp.windows.forEach { $0.close() }
+
+        // Clear the browsing history
+        let websiteDataTypes = NSSet(array: [WKWebsiteDataTypeCookies, WKWebsiteDataTypeDiskCache, WKWebsiteDataTypeMemoryCache])
+        let dataStore = WKWebsiteDataStore.default()
+
+        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: websiteDataTypes as! Set<String>) { records in
+            dataStore.removeData(ofTypes: websiteDataTypes as! Set<String>, for: records, completionHandler: {
+                // print("Browsing history, including cookies, cleared.")
+            })
+        }
+    }
+    
 }

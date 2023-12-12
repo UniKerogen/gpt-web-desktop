@@ -204,5 +204,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         preferencesWindowController?.showWindow(sender)
     }
+    
+    // MARK: Clear History
+    // Function to clear browsing history
+    func clearWebViewHistory() {
+        if let viewController = NSApp.mainWindow?.contentViewController as? MyViewController {
+            viewController.clearWebViewHistory()
+        }
+    }
+    
+    @IBAction func clearHistoryClicked(_ sender: Any) {
+        clearWebViewHistory()
+        showMainWindow()
+    }
 }
 
