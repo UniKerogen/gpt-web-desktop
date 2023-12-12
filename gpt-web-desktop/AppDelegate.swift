@@ -22,7 +22,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Add any additional setup code here.
-        
+        showMainWindow()
+        registerShortcut()
     }
     
     // MARK: Window Behavior
@@ -216,6 +217,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func clearHistoryClicked(_ sender: Any) {
         clearWebViewHistory()
         showMainWindow()
+    }
+    
+    // MARK: Shortcut for Window within the App
+    func registerShortcut() {
+        NSEvent.addLocalMonitorForEvents(matching: .keyDown) { (event) -> NSEvent? in
+            if event.modifierFlags.contains(.command) && event.characters?.lowercased() == "n" {
+                self.showMainWindow()
+                return nil
+            }
+            return event
+        }
     }
 }
 
