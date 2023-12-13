@@ -86,6 +86,7 @@
 		2B60C5762B190D0900D11386 = {
 			isa = PBXGroup;
 			children = (
+				2B6F72A02B2A213400080DF3 /* supplement */,
 				2BE9CE5C2B1F922B0007ED94 /* README.md */,
 				2B60C5812B190D0900D11386 /* gpt-web-desktop */,
 				2B60C5932B190D0A00D11386 /* gpt-web-desktopTests */,
@@ -135,6 +136,13 @@
 				2B60C5A02B190D0A00D11386 /* gpt_web_desktopUITestsLaunchTests.swift */,
 			);
 			path = "gpt-web-desktopUITests";
+			sourceTree = "<group>";
+		};
+		2B6F72A02B2A213400080DF3 /* supplement */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = supplement;
 			sourceTree = "<group>";
 		};
 		2BE9CE592B1F91970007ED94 /* Resources */ = {

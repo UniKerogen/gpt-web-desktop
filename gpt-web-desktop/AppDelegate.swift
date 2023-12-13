@@ -161,9 +161,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         openTempWindow(target: claude.data)
     }
     
-    @objc func openBard() {
-        openTempWindow(target: google.data)
-    }
+//    @objc func openBard() {
+//        openTempWindow(target: google.data)
+//    }
     
     @objc func openBing() {
         openTempWindow(target: bing.data)
