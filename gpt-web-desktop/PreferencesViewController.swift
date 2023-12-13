@@ -40,6 +40,7 @@ class PreferencesViewController: NSViewController {
     
     @IBOutlet weak var setUnsetFloatingButton: NSButtonCell!
     
+    
     var preferencesWindowController: NSWindowController?
 
     // Add website options
@@ -131,31 +132,61 @@ class PreferencesViewController: NSViewController {
         let alert = NSAlert()
         
         let messageText = "Help of Settings..."
-        let informativeText = """
-            Chatbot Settings:
-            All changed settings will be applied in the new window.
-            
-            Floating Window Settings:
-            Newest Window - The most current window, if it is closed then it is unsetable
-            Open New Always-Floating Window - This window will always be floating and excluded from the most current window
-            
-            Key Binding Settings:
-            --- Please Wait to be Implemented ---
-            """
-
+        
         alert.messageText = messageText
-        alert.informativeText = "\n\n\n\n"
+        alert.informativeText = "\n\n\n\n\n\n\n\n"
         alert.alertStyle = .informational
 
         // Create an NSTextView for customizing the text alignment
         let textView = NSTextView(frame: NSRect(x: 0, y: 0, width: 300, height: 100))
-        textView.string = informativeText
         textView.isEditable = false
+        // Set the background color to match the alert's background color
         textView.backgroundColor = NSColor.clear
 
+        // Set text color for both light and dark mode
+        textView.textColor = NSColor.textColor
+
+        // Set the appearance to match the alert's appearance
+        textView.appearance = alert.window.appearance
+        
         // Set left alignment for the text view
         textView.alignment = .left
+        
+        // Paragraph Style
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 1.2
+        let boldbody: [NSAttributedString.Key: Any] = [
+            .font: NSFont.boldSystemFont(ofSize: 12),
+            .paragraphStyle: paragraphStyle,
+            .foregroundColor: NSColor.textColor
+        ]
+        let body: [NSAttributedString.Key: Any] = [
+            .font: NSFont.systemFont(ofSize: 12),
+            .paragraphStyle: paragraphStyle,
+            .foregroundColor: NSColor.textColor
+        ]
+        let italicbody: [NSAttributedString.Key: Any] = [
+            .font: NSFontManager.shared.convert(NSFont.systemFont(ofSize: 12), toHaveTrait: .italicFontMask),
+            .paragraphStyle: paragraphStyle,
+            .foregroundColor: NSColor.textColor
+        ]
+        
+        let informativeText = NSMutableAttributedString()
+        informativeText.append(NSAttributedString(string:"ChatBot Settings:\n", attributes: boldbody))
+        informativeText.append(NSAttributedString(string:"All changed settings will be applied in the new window.\n", attributes: body))
+        informativeText.append(NSAttributedString(string:"\n", attributes: body))
+        informativeText.append(NSAttributedString(string:"Floating Window Settings:\n", attributes: boldbody))
+        informativeText.append(NSAttributedString(string:"Newest Window: ", attributes: italicbody))
+        informativeText.append(NSAttributedString(string:"The most currently opened window, if it is closed then it is unsetable.\n", attributes: body))
+        informativeText.append(NSAttributedString(string:"Always-Floating Window: ", attributes: italicbody))
+        informativeText.append(NSAttributedString(string:"This window will always be floating and excluded from the most current window.\n", attributes: body))
+        informativeText.append(NSAttributedString(string:"\n", attributes: body))
+        informativeText.append(NSAttributedString(string:"Key Binding Settings:\n", attributes: boldbody))
+        informativeText.append(NSAttributedString(string:"--- Please Wait to be Implemented ---\n", attributes: body))
 
+        // Apply the attributed text to the text view
+        textView.textStorage?.setAttributedString(informativeText)
+        
         // Add the text view as an accessory view to the alert
         alert.accessoryView = textView
         

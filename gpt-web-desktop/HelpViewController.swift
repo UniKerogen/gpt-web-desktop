@@ -29,10 +29,6 @@ class HelpViewController: NSViewController {
         // Create a paragraph style with line spacing
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 1.2
-        
-        // Italic Font Set
-        let baseFont = NSFont.systemFont(ofSize: 12)
-        let slantedFont = NSFontManager.shared.convert(baseFont, toHaveTrait: .italicFontMask)
 
         // Create attributes with the paragraph style
         let body: [NSAttributedString.Key: Any] = [
@@ -52,13 +48,13 @@ class HelpViewController: NSViewController {
             .paragraphStyle: paragraphStyle
         ]
         let goodExample: [NSAttributedString.Key: Any] = [
-            .font: slantedFont,
+            .font: NSFontManager.shared.convert(NSFont.systemFont(ofSize: 12), toHaveTrait: .italicFontMask), // Italic
             .paragraphStyle: paragraphStyle,
             .underlineStyle: NSUnderlineStyle.single.rawValue,  // Underline
         ]
         let badExample: [NSAttributedString.Key: Any] = [
-            .font: slantedFont,
-            .paragraphStyle: paragraphStyle,  // Italic
+            .font: NSFontManager.shared.convert(NSFont.systemFont(ofSize: 12), toHaveTrait: .italicFontMask), // Italic
+            .paragraphStyle: paragraphStyle
         ]
         let exampleBody: [NSAttributedString.Key: Any] = [
             .font: NSFont.systemFont(ofSize: 12),

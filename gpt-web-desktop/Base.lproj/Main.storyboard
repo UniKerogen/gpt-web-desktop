@@ -648,7 +648,6 @@
                     </view>
                     <connections>
                         <outlet property="helpButton" destination="OMo-W2-1JR" id="Z1Y-67-0XG"/>
-                        <outlet property="preferenceTabs" destination="Raa-c4-OJT" id="6El-UV-Ipp"/>
                         <outlet property="setUnsetFloatingButton" destination="49p-5x-656" id="IdN-za-y8d"/>
                         <outlet property="websiteComboBox" destination="Ypo-2I-PqY" id="0IX-sX-B96"/>
                     </connections>
