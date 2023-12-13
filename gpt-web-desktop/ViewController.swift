@@ -171,7 +171,4 @@ class MyViewController: NSViewController, WKNavigationDelegate {
             })
         }
     }
-    
-    // MARK: ViewControllerDelegate - Window Always On Top
-
 }

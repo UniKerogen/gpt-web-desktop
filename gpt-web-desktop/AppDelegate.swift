@@ -13,6 +13,12 @@ var tempTargetWebsite: String?
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     var myWindow: NSWindow!
+    var activeWindow: NSWindow? {
+        didSet {
+            // Set the level to .normal when the activeWindow changes
+            oldValue?.level = .normal
+        }
+    }
     
     var preferencesWindowController: NSWindowController?
     var preferenceWindow: NSWindow!
@@ -22,7 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Add any additional setup code here.
-        showMainWindow()
+        showMainWindow(windowLevel: false)
         registerShortcut()
     }
     
@@ -36,11 +42,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Check if a window is already open
         if NSApp.windows.isEmpty {
             // If no window is open, create and show a new window
-            showMainWindow()
+            showMainWindow(windowLevel: false)
         }
     }
     
-    func showMainWindow() {
+    func showMainWindow(windowLevel: Bool = false) {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         if let viewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("MainApp")) as? NSViewController {
             myWindow = NSWindow(contentViewController: viewController)
@@ -55,10 +61,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 let windowRect = NSRect(x: screenFrame.maxX - defaultSize.width, y: screenFrame.midY - defaultSize.height / 2, width: defaultSize.width, height: defaultSize.height)
                 myWindow.setFrame(windowRect, display: true)
             }
-            // Set the initial window level
-            myWindow.level = .normal
             
             myWindow.makeKeyAndOrderFront(nil)
+            
+            // Window Level
+            if windowLevel {
+                myWindow.level = .floating
+            } else {
+                myWindow.level = .normal
+                activeWindow = myWindow
+            }
         }
     }
     
@@ -224,9 +236,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: Shortcut for Window within the App
     func registerShortcut() {
         NSEvent.addLocalMonitorForEvents(matching: .keyDown) { (event) -> NSEvent? in
-            if event.modifierFlags.contains(.command) && event.characters?.lowercased() == "n" {
-                self.showMainWindow()
-                return nil
+            if event.modifierFlags.contains(.command) {
+                if let characters = event.characters?.lowercased() {
+                    switch characters {
+                    case "n":  // command + n
+                        self.showMainWindow()
+                        return nil
+                    case "q":  // command + q
+                        self.quit(self)
+                        return nil
+                    default:
+                        break
+                    }
+                }
             }
             return event
         }

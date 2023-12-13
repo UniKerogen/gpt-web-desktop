@@ -38,6 +38,8 @@ class PreferencesViewController: NSViewController {
     
     @IBOutlet weak var helpButton: NSButton!
     
+    @IBOutlet weak var setUnsetFloatingButton: NSButtonCell!
+    
     var preferencesWindowController: NSWindowController?
 
     // Add website options
@@ -109,7 +111,7 @@ class PreferencesViewController: NSViewController {
         
         // Show New Window
         if let appDelegate = NSApplication.shared.delegate as? AppDelegate {
-            appDelegate.showMainWindow()
+            appDelegate.showMainWindow(windowLevel: false)
         }
     }
     
@@ -127,10 +129,23 @@ class PreferencesViewController: NSViewController {
     
     @IBAction func showTooltip(_ sender: Any) {
         let alert = NSAlert()
-        alert.messageText = "Help Information"
+        alert.messageText = "Help of Settings..."
         alert.informativeText = """
+        Chatbot Settings:
         All changed settings will be applied in new window.
+        Floating Window Settings:
+        Newest Window - The most current window, if it is closed then it is unsetable
+        Open New Always-Floating Window - This window will be always floating and excluded from most current window
+        Key Binding Settings:
+        --- Please Wait to be Implemented ---
         """
+        let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .left
+        
+        let informativeTextAttributes: [NSAttributedString.Key: Any] = [
+                .paragraphStyle: paragraphStyle,
+            ]
+        
         alert.alertStyle = .informational
         
         alert.beginSheetModal(for: view.window!) { _ in
@@ -138,19 +153,26 @@ class PreferencesViewController: NSViewController {
         }
     }
     
-    // MARK: Window Behavior
-    @IBAction func toggleAlwaysOnTop(_ sender: NSButton) {
-        if let appDelegate = NSApplication.shared.delegate as? AppDelegate,
-           let myWindow = appDelegate.myWindow {
-            
-            // Check if the button is checked
-            if sender.state == .on {
-                // Set the window level to be always on top
-                myWindow.level = .floating
-            } else {
-                // Set the window level back to normal
-                myWindow.level = .normal
+    // MARK: Floating Newest Window
+    @IBAction func toggleAlwaysOnTop(_ sender: Any) {
+        if let appDelegate = NSApp.delegate as? AppDelegate {
+            if let activeWindow = appDelegate.activeWindow {
+                if activeWindow.level == .normal {
+                    activeWindow.level = .floating
+                } else {
+                    activeWindow.level = .normal
+                }
             }
+        }
+        // Gray Out if No Newest Window
+        setUnsetFloatingButton.isEnabled = (NSApp.delegate as? AppDelegate)?.activeWindow != nil
+    }
+    
+    // MARK: New Always Floating Window
+    @IBAction func openNewFloatingWindow(_ sender: Any) {
+        // Show New Window
+        if let appDelegate = NSApplication.shared.delegate as? AppDelegate {
+            appDelegate.showMainWindow(windowLevel: true)
         }
     }
 }
