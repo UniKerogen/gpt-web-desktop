@@ -16,15 +16,15 @@ struct ChatBot{
 
 var chatGPT = ChatBot(name:"ChatGPT", data:"https://www.chatgpt.com/")
 var claude = ChatBot(name:"Claude", data:"https://claude.ai/login?returnTo=%2F")
-var google = ChatBot(name:"Google", data:"https://bard.google.com")
+// var google = ChatBot(name:"Google", data:"https://bard.google.com")
 var bing = ChatBot(name:"Bing", data:"https://www.bing.com/search?form=MY0291&OCID=MY0291&q=Bing+AI&showconv=1")
 var phind = ChatBot(name:"Phind", data:"https://www.phind.com/agent?home=true")
 var playground = ChatBot(name:"Playground", data:"https://playgroundai.com")  // Picture
-var canva = ChatBot(name:"Canva", data:"https://www.canva.com/")  // Image
-var wyyx = ChatBot(name:"问言一心", data:"https://yiyan.baidu.com")
+// var canva = ChatBot(name:"Canva", data:"https://www.canva.com/")  // Image
+var wyyx = ChatBot(name:"文心一言", data:"https://yiyan.baidu.com")
 var tyqw = ChatBot(name:"通义千问", data:"https://qianwen.aliyun.com")
 var poe = ChatBot(name:"POE", data:"https://poe.com")  // A combination of chatbots
-var notion = ChatBot(name:"Notion", data:"www.notion.so")  // Note
+// var notion = ChatBot(name:"Notion", data:"www.notion.so")  // Note
 
 var targetWebsite: String?
 
@@ -44,8 +44,8 @@ class PreferencesViewController: NSViewController {
     var preferencesWindowController: NSWindowController?
 
     // Add website options
-    let websiteOptions = ["ChatGPT", "Claude", "Google", "Bing", "文言一心", "通义千问",
-    "Playground", "Canva", "POE", "Notion"]
+    let websiteOptions = ["ChatGPT", "Claude", "Bing", "文心一言", "通义千问",
+    "Playground", "POE"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,24 +68,20 @@ class PreferencesViewController: NSViewController {
             return chatGPT.data
         case claude.name:
             return claude.data
-        case google.name:
-            return google.data
+//        case google.name:
+//            return google.data
         case bing.name:
             return bing.data
         case phind.name:
             return phind.data
         case playground.name:
             return playground.data
-        case canva.name:
-            return canva.data
         case wyyx.name:
             return wyyx.data
         case tyqw.name:
             return tyqw.data
         case poe.name:
             return poe.data
-        case notion.name:
-            return notion.data
         default:
             return chatGPT.data
         }

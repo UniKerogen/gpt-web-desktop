@@ -27,4 +27,8 @@ A simple application in macOS that brings some of the most popular chatbots righ
 
 ## Potential Update
 - Menu Bar App Access
+- Proxy Settings if needed
+
+## Credits
+All chatbot credits goes to their owners, OpenAI, Google and etc.
 

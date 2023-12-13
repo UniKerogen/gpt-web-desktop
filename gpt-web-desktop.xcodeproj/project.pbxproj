@@ -466,7 +466,7 @@
 				CODE_SIGN_ENTITLEMENTS = "gpt-web-desktop/gpt_web_desktop.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 45;
 				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "gpt-web-desktop/Info.plist";
@@ -496,7 +496,7 @@
 				CODE_SIGN_ENTITLEMENTS = "gpt-web-desktop/gpt_web_desktop.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 45;
 				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "gpt-web-desktop/Info.plist";
