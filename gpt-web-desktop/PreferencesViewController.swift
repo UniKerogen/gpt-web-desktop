@@ -129,25 +129,39 @@ class PreferencesViewController: NSViewController {
     
     @IBAction func showTooltip(_ sender: Any) {
         let alert = NSAlert()
-        alert.messageText = "Help of Settings..."
-        alert.informativeText = """
-        Chatbot Settings:
-        All changed settings will be applied in new window.
-        Floating Window Settings:
-        Newest Window - The most current window, if it is closed then it is unsetable
-        Open New Always-Floating Window - This window will be always floating and excluded from most current window
-        Key Binding Settings:
-        --- Please Wait to be Implemented ---
-        """
-        let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.alignment = .left
         
-        let informativeTextAttributes: [NSAttributedString.Key: Any] = [
-                .paragraphStyle: paragraphStyle,
-            ]
-        
+        let messageText = "Help of Settings..."
+        let informativeText = """
+            Chatbot Settings:
+            All changed settings will be applied in the new window.
+            
+            Floating Window Settings:
+            Newest Window - The most current window, if it is closed then it is unsetable
+            Open New Always-Floating Window - This window will always be floating and excluded from the most current window
+            
+            Key Binding Settings:
+            --- Please Wait to be Implemented ---
+            """
+
+        alert.messageText = messageText
+        alert.informativeText = "\n\n\n\n"
         alert.alertStyle = .informational
+
+        // Create an NSTextView for customizing the text alignment
+        let textView = NSTextView(frame: NSRect(x: 0, y: 0, width: 300, height: 100))
+        textView.string = informativeText
+        textView.isEditable = false
+        textView.backgroundColor = NSColor.clear
+
+        // Set left alignment for the text view
+        textView.alignment = .left
+
+        // Add the text view as an accessory view to the alert
+        alert.accessoryView = textView
         
+        // Adjust the positioning of the text view within the alert
+        textView.frame.origin.y = -50
+
         alert.beginSheetModal(for: view.window!) { _ in
             // Code to execute after the alert is dismissed
         }

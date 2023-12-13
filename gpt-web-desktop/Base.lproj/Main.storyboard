@@ -636,12 +636,6 @@
                                             </constraints>
                                         </view>
                                     </tabViewItem>
-                                    <tabViewItem label="Connection" identifier="" id="UJz-4k-9uW">
-                                        <view key="view" id="FXC-Te-UzT">
-                                            <rect key="frame" x="10" y="33" width="434" height="231"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </view>
-                                    </tabViewItem>
                                 </tabViewItems>
                             </tabView>
                         </subviews>
