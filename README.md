@@ -9,15 +9,15 @@ A simple application in macOS that brings some of the most popular chatbots righ
 - [x] Open ChatBots in Multiple Window
 - [x] Baked-in Tips for Chatting with ChatBots
 - [x] Quick Selection for ChatBots in Dock Menu
+- [x] Window Always On Top
 - [ ] Customizable Global ShortCut
-- [ ] Window Always On Top
 
 ## App Screens
 
 
 
 ## System Requirement
-- macOS 14+
+- Tested and Built on macOS 14 Sonoma 
 
 ## Usage
 1. Download the latest release of DMG file
