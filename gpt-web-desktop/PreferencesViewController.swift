@@ -16,7 +16,7 @@ struct ChatBot{
 
 var chatGPT = ChatBot(name:"ChatGPT", data:"https://www.chatgpt.com/")
 var claude = ChatBot(name:"Claude", data:"https://claude.ai/login?returnTo=%2F")
-// var google = ChatBot(name:"Google", data:"https://bard.google.com")
+// var google = ChatBot(name:"Google", data:"https://bard.google.com")  // Not Tested
 var bing = ChatBot(name:"Bing", data:"https://www.bing.com/search?form=MY0291&OCID=MY0291&q=Bing+AI&showconv=1")
 var phind = ChatBot(name:"Phind", data:"https://www.phind.com/agent?home=true")
 var playground = ChatBot(name:"Playground", data:"https://playgroundai.com")  // Picture
