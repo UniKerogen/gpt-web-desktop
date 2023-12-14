@@ -6,6 +6,12 @@
 //
 
 import Cocoa
+// import HotKey
+
+extension Notification.Name {
+    static let updateShortcutUI = Notification.Name("updateShortcutUI")
+    static let showPreferencesWindow = Notification.Name("showPreferencesWindow")
+}
 
 // MARK: ChatBot Setup
 
@@ -31,7 +37,7 @@ var targetWebsite: String?
 // MARK: Preference View Controller
 
 class PreferencesViewController: NSViewController {
-
+    
     @IBOutlet weak var preferenceTabs: NSTabView!
     
     @IBOutlet weak var websiteComboBox: NSComboBox!
@@ -40,17 +46,23 @@ class PreferencesViewController: NSViewController {
     
     @IBOutlet weak var setUnsetFloatingButton: NSButtonCell!
     
+    @IBOutlet weak var enableShortcutCheckbox: NSButton!
+    @IBOutlet weak var customShortcutField: NSTextField!
+    @IBOutlet weak var customizeShortcutButton: NSButton!
+    
+    @IBOutlet weak var saveButton: NSButton!
+    @IBOutlet weak var saveAndOpenButton: NSButton!
     
     var preferencesWindowController: NSWindowController?
-
+    
     // Add website options
     let websiteOptions = ["ChatGPT", "Claude", "Bing", "文心一言", "通义千问",
-    "Playground", "POE"]
-
+                          "Playground", "POE"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         websiteComboBox.addItems(withObjectValues: websiteOptions)
-
+        
         // Load saved preference or set a default value
         if let selectedWebsite = UserDefaults.standard.string(forKey: "SelectedWebsite") {
             websiteComboBox.stringValue = selectedWebsite
@@ -58,6 +70,11 @@ class PreferencesViewController: NSViewController {
             // Set a default website
             websiteComboBox.stringValue = websiteOptions.first ?? ""
         }
+        
+        // Set Global Short Cut
+        GlobalShortcutManager.shared.setCustomShortcut(with: [.command, .option, .shift], key: .g)
+        // Update UI based on whether the shortcut is enabled
+        updateShortcutUI()
     }
     
     //MARK: Chat Bot Preference
@@ -68,8 +85,8 @@ class PreferencesViewController: NSViewController {
             return chatGPT.data
         case claude.name:
             return claude.data
-//        case google.name:
-//            return google.data
+            //        case google.name:
+            //            return google.data
         case bing.name:
             return bing.data
         case phind.name:
@@ -88,7 +105,11 @@ class PreferencesViewController: NSViewController {
     }
     
     // MARK: Save Preference Button
-
+    @IBAction func websiteComboBoxDidChange(_ sender: Any) {
+        saveButton.isEnabled = !websiteComboBox.stringValue.isEmpty
+        saveAndOpenButton.isEnabled = !websiteComboBox.stringValue.isEmpty
+    }
+    
     @IBAction func savePreferences(_ sender: Any) {
         // Convert Name to URL
         targetWebsite = convertWebsiteNameToURL(websiteComboBox.stringValue)
@@ -121,9 +142,10 @@ class PreferencesViewController: NSViewController {
         }
         preferencesWindowController?.showWindow(sender)
     }
+}
     
-    //MARK: Help Button
-    
+//MARK: Help Button
+extension PreferencesViewController {
     @IBAction func showTooltip(_ sender: Any) {
         let alert = NSAlert()
         
@@ -132,16 +154,16 @@ class PreferencesViewController: NSViewController {
         alert.messageText = messageText
         alert.informativeText = "\n\n\n\n\n\n\n\n"
         alert.alertStyle = .informational
-
+        
         // Create an NSTextView for customizing the text alignment
         let textView = NSTextView(frame: NSRect(x: 0, y: 0, width: 300, height: 100))
         textView.isEditable = false
         // Set the background color to match the alert's background color
         textView.backgroundColor = NSColor.clear
-
+        
         // Set text color for both light and dark mode
         textView.textColor = NSColor.textColor
-
+        
         // Set the appearance to match the alert's appearance
         textView.appearance = alert.window.appearance
         
@@ -179,7 +201,7 @@ class PreferencesViewController: NSViewController {
         informativeText.append(NSAttributedString(string:"\n", attributes: body))
         informativeText.append(NSAttributedString(string:"Key Binding Settings:\n", attributes: boldbody))
         informativeText.append(NSAttributedString(string:"--- Please Wait to be Implemented ---\n", attributes: body))
-
+        
         // Apply the attributed text to the text view
         textView.textStorage?.setAttributedString(informativeText)
         
@@ -188,13 +210,15 @@ class PreferencesViewController: NSViewController {
         
         // Adjust the positioning of the text view within the alert
         textView.frame.origin.y = -50
-
+        
         alert.beginSheetModal(for: view.window!) { _ in
             // Code to execute after the alert is dismissed
         }
     }
-    
-    // MARK: Floating Newest Window
+}
+
+// MARK: Floating Newest Window
+extension PreferencesViewController {
     @IBAction func toggleAlwaysOnTop(_ sender: Any) {
         if let appDelegate = NSApp.delegate as? AppDelegate {
             if let activeWindow = appDelegate.activeWindow {
@@ -218,3 +242,38 @@ class PreferencesViewController: NSViewController {
     }
 }
 
+// MARK: Global Short Cut
+extension PreferencesViewController {
+    @objc func updateShortcutUI() {
+        // Update UI based on whether the shortcut is enabled
+        enableShortcutCheckbox.state = GlobalShortcutManager.shared.hotKey != nil ? .on : .off
+        
+        // Use the stored string representation of the shortcut
+        customShortcutField.stringValue = GlobalShortcutManager.shared.shortcutString
+        customShortcutField.isEditable = false
+        customShortcutField.backgroundColor = NSColor.clear
+    }
+
+    @IBAction func enableShortcutCheckboxDidChange(_ sender: NSButton) {
+        if sender.state == .on {
+            // Enable the global shortcut
+            GlobalShortcutManager.shared.setCustomShortcut(with: [.command, .shift, .control], key: .g)
+        } else {
+            // Disable the global shortcut
+            GlobalShortcutManager.shared.setCustomShortcut(with: [], key: .g)
+        }
+    }
+
+    @IBAction func customizeShortcutButtonClicked(_ sender: Any) {
+        // Implement the logic to customize the shortcut
+        // For example, open a dialog to capture a new key combination
+        // You may use NSEvent's addLocalMonitorForEvents method
+        print("Trying to set custom shortcut")
+    }
+    
+    // Add the following code to observe notifications and update UI
+    func setupNotificationObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateShortcutUI), name: .updateShortcutUI, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showPreferencesWindow), name: .showPreferencesWindow, object: nil)
+    }
+}
