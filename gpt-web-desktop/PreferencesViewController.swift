@@ -6,7 +6,6 @@
 //
 
 import Cocoa
-// import HotKey
 
 extension Notification.Name {
     static let updateShortcutUI = Notification.Name("updateShortcutUI")
@@ -266,8 +265,6 @@ extension PreferencesViewController {
 
     @IBAction func customizeShortcutButtonClicked(_ sender: Any) {
         // Implement the logic to customize the shortcut
-        // For example, open a dialog to capture a new key combination
-        // You may use NSEvent's addLocalMonitorForEvents method
         print("Trying to set custom shortcut")
     }
     
