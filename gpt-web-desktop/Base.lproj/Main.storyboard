@@ -581,7 +581,7 @@
                                                 </textField>
                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4an-Uq-h1h">
                                                     <rect key="frame" x="18" y="19" width="121" height="22"/>
-                                                    <buttonCell key="cell" type="check" title="Global Shortcut" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="0Zl-UU-f53">
+                                                    <buttonCell key="cell" type="check" title="Global Shortcut" bezelStyle="regularSquare" imagePosition="left" inset="2" id="0Zl-UU-f53">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>

@@ -65,9 +65,12 @@ class PreferencesViewController: NSViewController {
             websiteComboBox.stringValue = websiteOptions.first ?? ""
         }
         
-        // Enable Global Shortcut by default
-        GlobalShortcutManager.shared.shortcutAction(type: "enable")
         // Update Global Shortcut UI based on whether the shortcut is enabled
+        if GlobalShortcutManager.shared.enabled == true {
+            enableShortcutCheckbox.state = .on
+        } else {
+            enableShortcutCheckbox.state = .off
+        }
         updateShortcutUI()
     }
     

@@ -12,6 +12,7 @@ class GlobalShortcutManager {
     static let shared = GlobalShortcutManager()
     
     var shortcutString: String?
+    var enabled: Bool?
     var customized: Bool? = false
     
     private var globalHotKey: HotKey? {
@@ -31,17 +32,21 @@ class GlobalShortcutManager {
             // do something
             print("Try to set custom shortcut")
             customized = true
+            enabled = true
         case "enable":
             if customized == true {
                 shortcutAction(type: "custom")
             } else {
                 shortcutAction(type: "default")
             }
+            enabled = true
         case "disable":
             setCustomShortcut(with: [], key: .g)
+            enabled = false
         default:
             shortcutString = "Command + Shift + Option + G"
             setCustomShortcut(with: [.command, .shift, .option], key: .g)
+            enabled = true
         }
     }
 
@@ -50,6 +55,8 @@ class GlobalShortcutManager {
     }
 
     private func hotKeyFired() {
+        // Active App
+        NSApp.activate(ignoringOtherApps: true)
         // Access the AppDelegate
         guard let appDelegate = NSApp.delegate as? AppDelegate else {
             return
