@@ -249,7 +249,7 @@ class PreferencesViewController: NSViewController {
         }
         
         // Use the stored string representation of the shortcut
-        customShortcutField.stringValue = GlobalShortcutManager.shared.shortcutString ?? "Command + Shift + Option + G"
+        customShortcutField.stringValue = GlobalShortcutManager.shared.shortcutString ?? "⌘ ⇧ ⌥ G"
         customShortcutField.isEditable = false
         customShortcutField.backgroundColor = NSColor.clear
     }
@@ -257,6 +257,52 @@ class PreferencesViewController: NSViewController {
     @IBAction func customizeShortcut(_ sender: Any) {
         // Record a combination of key press and set it to the new shortcut
         print("Trying to set custom shortcut")
+        // Create a new window or alert to instruct the user to press a key combination
+        let alert = NSAlert()
+        alert.messageText = "Press the desired key combination"
+        alert.addButton(withTitle: "OK")
+        // Display the alert as a sheet
+        alert.beginSheetModal(for: view.window!) { response in
+            if response == NSApplication.ModalResponse.OK {
+                GlobalShortcutManager.shared.shortcutAction(type: "custom")
+            }
+        }
+    }
+    
+    override var acceptsFirstResponder: Bool {
+        return true
+    }
+    
+    // Override keyDown to capture key events
+    override func keyDown(with event: NSEvent) {
+        // Check if the event contains a valid key code
+        print("Key Down Detected")
+        if let characters = event.charactersIgnoringModifiers, !characters.isEmpty {
+            // Build the shortcut string based on the pressed keys
+            let modifierFlags = event.modifierFlags
+            var shortcut = ""
+
+            if modifierFlags.contains(.command) {
+                shortcut += "⌘ "
+            }
+            if modifierFlags.contains(.shift) {
+                shortcut += "⇧ "
+            }
+            if modifierFlags.contains(.option) {
+                shortcut += "⌥ "
+            }
+            if modifierFlags.contains(.control) {
+                shortcut += "⌃ "
+            }
+
+            shortcut += characters.uppercased()
+
+            // Store the custom shortcut
+            GlobalShortcutManager.shared.shortcutString = shortcut
+
+            // Dismiss the alert if it's currently presented
+            NSApp.stopModal(withCode: NSApplication.ModalResponse.OK)
+        }
     }
     
     @IBAction func enableShortcutCheckboxClicked(_ sender: NSButton) {

@@ -33,18 +33,22 @@ class GlobalShortcutManager {
             print("Try to set custom shortcut")
             customized = true
             enabled = true
+            if let (modifier, key) = self.parseShortcut(shortcutString ?? "⌘ ⇧ ⌥ G"){
+                setCustomShortcut(with: modifier, key: key)
+            } else {
+                print("Invalid Input")
+            }
         case "enable":
             if customized == true {
                 shortcutAction(type: "custom")
             } else {
                 shortcutAction(type: "default")
             }
-            enabled = true
         case "disable":
             setCustomShortcut(with: [], key: .g)
             enabled = false
         default:
-            shortcutString = "Command + Shift + Option + G"
+            shortcutString = "⌘ ⇧ ⌥ G"
             setCustomShortcut(with: [.command, .shift, .option], key: .g)
             enabled = true
         }
@@ -70,5 +74,33 @@ class GlobalShortcutManager {
             // Open a new window using the showMainWindow function in AppDelegate
             appDelegate.showMainWindow(windowLevel: false)
         }
+    }
+    
+    func parseShortcut(_ shortcut: String) -> (modifierFlags: NSEvent.ModifierFlags, key: Key)? {
+        var modifierFlags: NSEvent.ModifierFlags = []
+        var key: Key?
+
+        // Sample Input: "⌘ ⇧ ⌥ G"
+        for char in shortcut.trimmingCharacters(in: .whitespaces) {
+            switch char {
+            case "⌘":
+                modifierFlags.insert(.command)
+            case "⇧":
+                modifierFlags.insert(.shift)
+            case "⌥":
+                modifierFlags.insert(.option)
+            case "⌃":
+                modifierFlags.insert(.control)
+            default:
+                if let specialKey = Key(string: char.uppercased()) {
+                    key = specialKey
+                }
+            }
+        }
+
+        // Ensure both modifierFlags and key are set before returning
+        guard let validKey = key else { return nil }
+
+        return (modifierFlags, validKey)
     }
 }
