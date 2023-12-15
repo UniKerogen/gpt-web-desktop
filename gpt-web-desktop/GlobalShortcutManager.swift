@@ -10,66 +10,58 @@ import HotKey
 
 class GlobalShortcutManager {
     static let shared = GlobalShortcutManager()
-
-    var hotKey: HotKey?
-    var shortcutModifiers: NSEvent.ModifierFlags = []
-    var shortcutKey: Key = .a
-    var shortcutString: String = "Not Set"
     
-    private init() {
-        setupGlobalShortcut()
+    var shortcutString: String?
+    var customized: Bool? = false
+    
+    private var globalHotKey: HotKey? {
+        didSet {
+            guard let hotKey = globalHotKey else { return }
+            hotKey.keyDownHandler = { [weak self] in
+                self?.hotKeyFired()
+            }
+        }
     }
 
-    private func setupGlobalShortcut() {
-        hotKey = HotKey(key: shortcutKey, modifiers: shortcutModifiers)
-        hotKey?.keyDownHandler = {
-            // Handle the global shortcut activation
-            self.handleGlobalShortcut()
+    private init() {}
+    
+    func shortcutAction(type: String){
+        switch type{
+        case "custom":
+            // do something
+            print("Try to set custom shortcut")
+            customized = true
+        case "enable":
+            if customized == true {
+                shortcutAction(type: "custom")
+            } else {
+                shortcutAction(type: "default")
+            }
+        case "disable":
+            setCustomShortcut(with: [], key: .g)
+        default:
+            shortcutString = "Command + Shift + Option + G"
+            setCustomShortcut(with: [.command, .shift, .option], key: .g)
         }
     }
 
     func setCustomShortcut(with modifiers: NSEvent.ModifierFlags, key: Key) {
-        shortcutModifiers = modifiers
-        shortcutKey = key
-        
-        hotKey = HotKey(key: shortcutKey, modifiers: shortcutModifiers)
-        hotKey?.keyDownHandler = {
-            // Handle the custom shortcut activation
-            self.handleGlobalShortcut()
-        }
-
-        updateShortcutString()
+        globalHotKey = HotKey(keyCombo: KeyCombo(key: key, modifiers: modifiers))
     }
 
-    private func updateShortcutString() {
-        // Update the string representation of the shortcut
-        let modifiersString = modifierFlagsToString(modifierFlags: shortcutModifiers)
-        let keyString = "\(shortcutKey)"
-        shortcutString = modifiersString.isEmpty ? "Not Set" : "\(modifiersString) + \(keyString)"
-    }
+    private func hotKeyFired() {
+        // Access the AppDelegate
+        guard let appDelegate = NSApp.delegate as? AppDelegate else {
+            return
+        }
 
-    private func handleGlobalShortcut() {
-        // Handle actions when the global shortcut is triggered
-        // Call the showPreferencesWindow method in PreferencesViewController
-        NotificationCenter.default.post(name: .showPreferencesWindow, object: nil)
-    }
-    
-    private func modifierFlagsToString(modifierFlags: NSEvent.ModifierFlags) -> String {
-        var modifiers: [String] = []
-        
-        if modifierFlags.contains(.command) {
-            modifiers.append("⌘")
+        // Check if the activeWindow exists
+        if let activeWindow = appDelegate.activeWindow {
+            // Activate the existing window
+            activeWindow.makeKeyAndOrderFront(nil)
+        } else {
+            // Open a new window using the showMainWindow function in AppDelegate
+            appDelegate.showMainWindow(windowLevel: false)
         }
-        if modifierFlags.contains(.shift) {
-            modifiers.append("⇧")
-        }
-        if modifierFlags.contains(.control) {
-            modifiers.append("⌃")
-        }
-        if modifierFlags.contains(.option) {
-            modifiers.append("⌥")
-        }
-        
-        return modifiers.joined(separator: " ")
     }
 }

@@ -19,7 +19,6 @@
 		2B6F72A72B2B819000080DF3 /* GlobalShortcutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F72A62B2B819000080DF3 /* GlobalShortcutManager.swift */; };
 		2BE9CE582B1EC5F10007ED94 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE9CE572B1EC5F10007ED94 /* HelpViewController.swift */; };
 		2BE9CE5B2B1F91E40007ED94 /* basicTab.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2BE9CE5A2B1F91E40007ED94 /* basicTab.rtf */; };
-		2BE9CE672B20EF2D0007ED94 /* Down in Frameworks */ = {isa = PBXBuildFile; productRef = 2BE9CE662B20EF2D0007ED94 /* Down */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +65,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B6F72A52B2B80F800080DF3 /* HotKey in Frameworks */,
-				2BE9CE672B20EF2D0007ED94 /* Down in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +174,6 @@
 			);
 			name = "gpt-web-desktop";
 			packageProductDependencies = (
-				2BE9CE662B20EF2D0007ED94 /* Down */,
 				2B6F72A42B2B80F800080DF3 /* HotKey */,
 			);
 			productName = "gpt-web-desktop";
@@ -252,7 +249,6 @@
 			);
 			mainGroup = 2B60C5762B190D0900D11386;
 			packageReferences = (
-				2BE9CE652B20EF2D0007ED94 /* XCRemoteSwiftPackageReference "Down" */,
 				2B6F72A32B2B80F800080DF3 /* XCRemoteSwiftPackageReference "HotKey" */,
 			);
 			productRefGroup = 2B60C5802B190D0900D11386 /* Products */;
@@ -656,14 +652,6 @@
 				kind = branch;
 			};
 		};
-		2BE9CE652B20EF2D0007ED94 /* XCRemoteSwiftPackageReference "Down" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/iwasrobbed/Down.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -671,11 +659,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2B6F72A32B2B80F800080DF3 /* XCRemoteSwiftPackageReference "HotKey" */;
 			productName = HotKey;
-		};
-		2BE9CE662B20EF2D0007ED94 /* Down */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2BE9CE652B20EF2D0007ED94 /* XCRemoteSwiftPackageReference "Down" */;
-			productName = Down;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

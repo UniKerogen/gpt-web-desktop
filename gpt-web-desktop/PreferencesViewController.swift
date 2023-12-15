@@ -7,11 +7,6 @@
 
 import Cocoa
 
-extension Notification.Name {
-    static let updateShortcutUI = Notification.Name("updateShortcutUI")
-    static let showPreferencesWindow = Notification.Name("showPreferencesWindow")
-}
-
 // MARK: ChatBot Setup
 
 struct ChatBot{
@@ -70,9 +65,9 @@ class PreferencesViewController: NSViewController {
             websiteComboBox.stringValue = websiteOptions.first ?? ""
         }
         
-        // Set Global Short Cut
-        GlobalShortcutManager.shared.setCustomShortcut(with: [.command, .option, .shift], key: .g)
-        // Update UI based on whether the shortcut is enabled
+        // Enable Global Shortcut by default
+        GlobalShortcutManager.shared.shortcutAction(type: "enable")
+        // Update Global Shortcut UI based on whether the shortcut is enabled
         updateShortcutUI()
     }
     
@@ -141,10 +136,9 @@ class PreferencesViewController: NSViewController {
         }
         preferencesWindowController?.showWindow(sender)
     }
-}
     
-//MARK: Help Button
-extension PreferencesViewController {
+    //MARK: Help Button
+
     @IBAction func showTooltip(_ sender: Any) {
         let alert = NSAlert()
         
@@ -214,10 +208,10 @@ extension PreferencesViewController {
             // Code to execute after the alert is dismissed
         }
     }
-}
 
-// MARK: Floating Newest Window
-extension PreferencesViewController {
+
+    // MARK: Floating Newest Window
+
     @IBAction func toggleAlwaysOnTop(_ sender: Any) {
         if let appDelegate = NSApp.delegate as? AppDelegate {
             if let activeWindow = appDelegate.activeWindow {
@@ -239,38 +233,36 @@ extension PreferencesViewController {
             appDelegate.showMainWindow(windowLevel: true)
         }
     }
-}
 
-// MARK: Global Short Cut
-extension PreferencesViewController {
-    @objc func updateShortcutUI() {
-        // Update UI based on whether the shortcut is enabled
-        enableShortcutCheckbox.state = GlobalShortcutManager.shared.hotKey != nil ? .on : .off
+    // MARK: Global Short Cut
+    
+    func updateShortcutUI() {
+        if enableShortcutCheckbox.state == .on {
+            customShortcutField.isEnabled = true
+            customizeShortcutButton.isEnabled = true
+        } else {
+            customShortcutField.isEnabled = false
+            customizeShortcutButton.isEnabled = false
+        }
         
         // Use the stored string representation of the shortcut
-        customShortcutField.stringValue = GlobalShortcutManager.shared.shortcutString
+        customShortcutField.stringValue = GlobalShortcutManager.shared.shortcutString ?? "Command + Shift + Option + G"
         customShortcutField.isEditable = false
         customShortcutField.backgroundColor = NSColor.clear
     }
-
-    @IBAction func enableShortcutCheckboxDidChange(_ sender: NSButton) {
-        if sender.state == .on {
-            // Enable the global shortcut
-            GlobalShortcutManager.shared.setCustomShortcut(with: [.command, .shift, .control], key: .g)
-        } else {
-            // Disable the global shortcut
-            GlobalShortcutManager.shared.setCustomShortcut(with: [], key: .g)
-        }
-    }
-
-    @IBAction func customizeShortcutButtonClicked(_ sender: Any) {
-        // Implement the logic to customize the shortcut
+    
+    @IBAction func customizeShortcut(_ sender: Any) {
+        // Record a combination of key press and set it to the new shortcut
         print("Trying to set custom shortcut")
     }
     
-    // Add the following code to observe notifications and update UI
-    func setupNotificationObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(updateShortcutUI), name: .updateShortcutUI, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(showPreferencesWindow), name: .showPreferencesWindow, object: nil)
+    @IBAction func enableShortcutCheckboxClicked(_ sender: NSButton) {
+        if sender.state == .on {
+            // Enable the global shortcut
+            GlobalShortcutManager.shared.shortcutAction(type: "enable")
+        } else {
+            // Disable the global shortcut
+            GlobalShortcutManager.shared.shortcutAction(type: "disable")
+        }
     }
 }

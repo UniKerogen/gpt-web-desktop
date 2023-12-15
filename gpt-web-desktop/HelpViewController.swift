@@ -6,7 +6,6 @@
 //
 
 import Cocoa
-import Down
 
 class HelpViewController: NSViewController {
     
@@ -303,42 +302,6 @@ class HelpViewController: NSViewController {
                 
             } catch {
                 print("Error loading RTF file: \(error)")
-            }
-        }
-    }
-    
-    // MARK: Load TextView from MD file
-    
-    func setupMarkdownViewFromFile(fileName: String, scrollView: NSScrollView) {
-        // Load the content from the specified Markdown file
-        if let markdownURL = Bundle.main.url(forResource: fileName, withExtension: "md"),
-           let markdownString = try? String(contentsOf: markdownURL) {
-
-            // Convert Markdown text to an attributed string
-            let down = Down(markdownString: markdownString)
-            let attributedString = try? down.toAttributedString()
-
-            // Create a text view and set its attributed string
-            let textView = NSTextView()
-            textView.textStorage?.setAttributedString(attributedString ?? NSAttributedString())
-
-            // Disable text input
-            textView.isEditable = false
-
-            // Enable auto-wrapping
-            textView.textContainer?.widthTracksTextView = true
-            textView.textContainer?.heightTracksTextView = true
-
-            // Set up the scroll view with the text view as the document view
-            scrollView.documentView = textView
-
-            // Appearance Adjustment
-            textView.appearance = tipTabView.effectiveAppearance
-            textView.backgroundColor = NSColor.clear
-
-            // Fine-tune appearance for dark mode
-            if NSApp.effectiveAppearance.name == .darkAqua {
-                textView.textColor = NSColor.white
             }
         }
     }
