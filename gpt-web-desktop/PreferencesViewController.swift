@@ -198,7 +198,7 @@ class PreferencesViewController: NSViewController {
         informativeText.append(NSAttributedString(string:"This window will always be floating and excluded from the most current window.\n", attributes: body))
         informativeText.append(NSAttributedString(string:"\n", attributes: body))
         informativeText.append(NSAttributedString(string:"Key Binding Settings:\n", attributes: boldbody))
-        informativeText.append(NSAttributedString(string:"--- Please Wait to be Implemented ---\n", attributes: body))
+        informativeText.append(NSAttributedString(string:"Click Set to set custom global shortcut\n", attributes: body))
         
         // Apply the attributed text to the text view
         textView.textStorage?.setAttributedString(informativeText)
@@ -215,8 +215,9 @@ class PreferencesViewController: NSViewController {
     }
 
 
-    // MARK: Floating Newest Window
+    // MARK: Floating Window
 
+    // Newest Window Floating
     @IBAction func toggleAlwaysOnTop(_ sender: Any) {
         if let appDelegate = NSApp.delegate as? AppDelegate {
             if let activeWindow = appDelegate.activeWindow {
@@ -231,7 +232,7 @@ class PreferencesViewController: NSViewController {
         setUnsetFloatingButton.isEnabled = (NSApp.delegate as? AppDelegate)?.activeWindow != nil
     }
     
-    // MARK: New Always Floating Window
+    // New Always Floating Window
     @IBAction func openNewFloatingWindow(_ sender: Any) {
         // Show New Window
         if let appDelegate = NSApplication.shared.delegate as? AppDelegate {

@@ -197,7 +197,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     "ApplicationName": "ChatGPT Web Viewer",
                     "ApplicationVersion": "2.0",
                     "ApplicationCopyright": "© 2023 Kuang Jiang",
-                    "ApplicationDescription": "Bring some GPT right to the desktop."
+                    "ApplicationDescription": "Bring some GPTs right to the desktop."
                 ]
                 
                 NSApp.orderFrontStandardAboutPanel(appInfo)
