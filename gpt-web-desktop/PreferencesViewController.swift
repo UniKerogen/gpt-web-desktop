@@ -257,6 +257,10 @@ class PreferencesViewController: NSViewController {
     @IBAction func customizeShortcut(_ sender: Any) {
         // Record a combination of key press and set it to the new shortcut
         print("Trying to set custom shortcut")
+        
+        // Make the view the first responder to capture key events
+        view.window?.makeFirstResponder(self)
+        
         // Create a new window or alert to instruct the user to press a key combination
         let alert = NSAlert()
         alert.messageText = "Press the desired key combination"

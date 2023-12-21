@@ -17,7 +17,7 @@
             startingLineNumber = "96"
             endingLineNumber = "96"
             landmarkName = "parseShortcut(_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -30,8 +30,8 @@
             filePath = "gpt-web-desktop/PreferencesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "keyDown(with:)"
             landmarkType = "7">
             <Locations>
@@ -93,6 +93,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "308"
                   endingLineNumber = "308"
+                  offsetFromSymbolStart = "1184">
+               </Location>
+               <Location
+                  uuid = "4ED993A2-0AF3-4555-8AEF-E8690D8A15CA - 786def795fa43691"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GPT_DEBUG.PreferencesViewController.keyDown(with: __C.NSEvent) -&gt; ()"
+                  moduleName = "GPT DEBUG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kj/Desktop/Mulberry/gpt-web-desktop/gpt-web-desktop/PreferencesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "305"
+                  endingLineNumber = "305"
                   offsetFromSymbolStart = "1184">
                </Location>
             </Locations>
