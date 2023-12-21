@@ -10,7 +10,7 @@ A simple application in macOS that brings some of the most popular chatbots righ
 - [x] Baked-in Tips for Chatting with ChatBots
 - [x] Quick Selection for ChatBots in Dock Menu
 - [x] Window Always On Top
-- [ ] Customizable Global ShortCut
+- [x] Customizable Global ShortCut
 
 ## App Screens
 | ChatGPT | Claude | Playground |
