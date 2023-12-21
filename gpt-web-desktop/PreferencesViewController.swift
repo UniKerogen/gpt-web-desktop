@@ -66,6 +66,8 @@ class PreferencesViewController: NSViewController {
         }
         
         // Update Global Shortcut UI based on whether the shortcut is enabled
+        enableShortcutCheckbox.target = self
+        enableShortcutCheckbox.action = #selector(enableShortcutCheckboxClicked(_:))
         if GlobalShortcutManager.shared.enabled == true {
             enableShortcutCheckbox.state = .on
         } else {
@@ -319,6 +321,9 @@ class PreferencesViewController: NSViewController {
                 finishAlert.addButton(withTitle: "OK")
                 
                 finishAlert.beginSheetModal(for: self.view.window!)
+                
+                // Update UI
+                updateShortcutUI()
             }
         }
     }
@@ -331,5 +336,8 @@ class PreferencesViewController: NSViewController {
             // Disable the global shortcut
             GlobalShortcutManager.shared.shortcutAction(type: "disable")
         }
+        
+        // Update UI
+        updateShortcutUI()
     }
 }
