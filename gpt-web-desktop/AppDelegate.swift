@@ -209,15 +209,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if preferencesWindowController == nil {
             let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
             if let preferencesViewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PreferencesWindowController")) as? PreferencesViewController {
-                preferenceWindow = NSWindow(contentViewController: preferencesViewController)
-
-                preferenceWindow.title = "Settings"
-
-                preferenceWindow.makeKeyAndOrderFront(nil)
+                preferencesWindowController = NSWindowController(window: NSWindow(contentViewController: preferencesViewController))
+                preferencesWindowController?.window?.title = "Settings"
             }
         }
 
-        preferencesWindowController?.showWindow(sender)
+        // Check if the window is already open
+        if preferencesWindowController?.window?.isVisible == true {
+            preferencesWindowController?.window?.makeKeyAndOrderFront(nil)
+        } else {
+            // Show the window if it's not open
+            preferencesWindowController?.showWindow(sender)
+            preferencesWindowController?.window?.makeKeyAndOrderFront(nil)
+        }
     }
     
     // MARK: Clear History
