@@ -447,7 +447,7 @@
                                     </tabViewItem>
                                 </tabViewItems>
                             </tabView>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ifb-HG-qUG">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ifb-HG-qUG">
                                 <rect key="frame" x="18" y="553" width="564" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Some tips when using GPTs:" id="0HF-bJ-Rmy">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -497,7 +497,7 @@
                                             <rect key="frame" x="10" y="33" width="438" height="242"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BDt-XO-CzB">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BDt-XO-CzB">
                                                     <rect key="frame" x="18" y="162" width="107" height="60"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Current ChatBot:" id="wyg-2U-1Jg">
                                                         <font key="font" usesAppearanceFont="YES"/>
@@ -505,7 +505,7 @@
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <comboBox focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ypo-2I-PqY">
+                                                <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ypo-2I-PqY">
                                                     <rect key="frame" x="130" y="200" width="291" height="23"/>
                                                     <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="--Select--" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Uf0-ZM-26P">
                                                         <font key="font" metaFont="system"/>
@@ -543,7 +543,7 @@
                                                         <action selector="saveAndOpenNewWindow:" target="vo8-qD-Ufy" id="Nbx-hx-Oqw"/>
                                                     </connections>
                                                 </button>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kk5-Kx-EA7">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kk5-Kx-EA7">
                                                     <rect key="frame" x="18" y="48" width="402" height="19"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Key Bindings" id="5DZ-iB-Npz">
                                                         <font key="font" metaFont="system" size="16"/>
@@ -571,7 +571,7 @@
                                                         <action selector="toggleAlwaysOnTop:" target="vo8-qD-Ufy" id="zg3-Qr-Xbx"/>
                                                     </connections>
                                                 </button>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kg0-Qh-6BU">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kg0-Qh-6BU">
                                                     <rect key="frame" x="18" y="135" width="402" height="19"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Window Settings:" id="MN9-au-PII">
                                                         <font key="font" metaFont="system" size="16"/>
@@ -599,7 +599,7 @@
                                                         <action selector="customizeShortcut:" target="vo8-qD-Ufy" id="I7N-6U-xox"/>
                                                     </connections>
                                                 </button>
-                                                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sez-cd-FxV">
+                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sez-cd-FxV">
                                                     <rect key="frame" x="147" y="20" width="179" height="20"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="4XL-5w-G2K">
                                                         <font key="font" metaFont="system"/>
@@ -656,6 +656,124 @@
                                             </constraints>
                                         </view>
                                     </tabViewItem>
+                                    <tabViewItem label="Connection" identifier="" id="fOn-BY-jDR">
+                                        <view key="view" id="uOf-4o-q0H">
+                                            <rect key="frame" x="10" y="33" width="438" height="242"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J9s-Ff-S1C">
+                                                    <rect key="frame" x="18" y="180" width="37" height="16"/>
+                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Host:" id="r9E-tg-6pc">
+                                                        <font key="font" usesAppearanceFont="YES"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OMu-Gf-4QP">
+                                                    <rect key="frame" x="18" y="149" width="37" height="16"/>
+                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Port: " id="PKy-fH-rdS">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2AQ-JM-Fgo">
+                                                    <rect key="frame" x="18" y="205" width="400" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Custom Proxy Settings" bezelStyle="regularSquare" imagePosition="left" inset="2" id="chJ-Y6-lft">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dPR-ng-nKZ">
+                                                    <rect key="frame" x="61" y="177" width="357" height="21"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="Q4Y-S6-l2Q">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gmr-q9-fiR">
+                                                    <rect key="frame" x="61" y="146" width="357" height="21"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="2R4-bT-4Aw">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ijy-YE-0NA">
+                                                    <rect key="frame" x="279" y="107" width="146" height="32"/>
+                                                    <buttonCell key="cell" type="push" title="Check Connection" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Uaf-3s-wIL">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MfA-Da-7Wh">
+                                                    <rect key="frame" x="13" y="107" width="111" height="32"/>
+                                                    <buttonCell key="cell" type="push" title="Save Proxy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UbR-0t-pZT">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="97" id="5W6-mg-pZQ"/>
+                                                    </constraints>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aw8-d9-J4U">
+                                                    <rect key="frame" x="122" y="107" width="159" height="32"/>
+                                                    <buttonCell key="cell" type="push" title="Clear Previous Proxy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yYE-tI-hYb">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="clearPreviousProxy:" target="vo8-qD-Ufy" id="LxH-IQ-oqP"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wPT-w1-D0H">
+                                                    <rect key="frame" x="13" y="75" width="412" height="32"/>
+                                                    <buttonCell key="cell" type="push" title="Open New Window with Custom Proxy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jdo-ee-lbq">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dPR-ng-nKZ" firstAttribute="leading" secondItem="J9s-Ff-S1C" secondAttribute="trailing" constant="8" symbolic="YES" id="10T-Vg-kz5"/>
+                                                <constraint firstItem="J9s-Ff-S1C" firstAttribute="top" secondItem="2AQ-JM-Fgo" secondAttribute="bottom" constant="10" id="3Xj-RS-J4M"/>
+                                                <constraint firstAttribute="trailing" secondItem="wPT-w1-D0H" secondAttribute="trailing" constant="20" symbolic="YES" id="5tW-w5-cnU"/>
+                                                <constraint firstAttribute="trailing" secondItem="gmr-q9-fiR" secondAttribute="trailing" constant="20" symbolic="YES" id="AWB-2J-bSY"/>
+                                                <constraint firstItem="ijy-YE-0NA" firstAttribute="leading" secondItem="aw8-d9-J4U" secondAttribute="trailing" constant="12" symbolic="YES" id="BRk-YU-tD2"/>
+                                                <constraint firstItem="2AQ-JM-Fgo" firstAttribute="leading" secondItem="uOf-4o-q0H" secondAttribute="leading" constant="20" symbolic="YES" id="CMA-BX-pAS"/>
+                                                <constraint firstAttribute="trailing" secondItem="ijy-YE-0NA" secondAttribute="trailing" constant="20" symbolic="YES" id="FFO-zy-QDa"/>
+                                                <constraint firstItem="aw8-d9-J4U" firstAttribute="leading" secondItem="MfA-Da-7Wh" secondAttribute="trailing" constant="12" symbolic="YES" id="FYB-Ex-hpw"/>
+                                                <constraint firstItem="MfA-Da-7Wh" firstAttribute="top" secondItem="OMu-Gf-4QP" secondAttribute="bottom" constant="15" id="JC5-RO-Hr5"/>
+                                                <constraint firstItem="MfA-Da-7Wh" firstAttribute="leading" secondItem="uOf-4o-q0H" secondAttribute="leading" constant="20" symbolic="YES" id="JRI-ku-QXL"/>
+                                                <constraint firstItem="dPR-ng-nKZ" firstAttribute="top" secondItem="2AQ-JM-Fgo" secondAttribute="bottom" constant="8" symbolic="YES" id="KuV-Rp-bKp"/>
+                                                <constraint firstAttribute="trailing" secondItem="2AQ-JM-Fgo" secondAttribute="trailing" constant="20" symbolic="YES" id="NiP-Ef-5G6"/>
+                                                <constraint firstItem="aw8-d9-J4U" firstAttribute="leading" secondItem="MfA-Da-7Wh" secondAttribute="trailing" constant="12" symbolic="YES" id="PZE-Ke-mJV"/>
+                                                <constraint firstItem="wPT-w1-D0H" firstAttribute="top" secondItem="MfA-Da-7Wh" secondAttribute="bottom" constant="12" symbolic="YES" id="QOA-Fd-dJz"/>
+                                                <constraint firstAttribute="trailing" secondItem="dPR-ng-nKZ" secondAttribute="trailing" constant="20" symbolic="YES" id="Qga-4e-m4q"/>
+                                                <constraint firstItem="ijy-YE-0NA" firstAttribute="top" secondItem="gmr-q9-fiR" secondAttribute="bottom" constant="12" id="VeR-ae-ybW"/>
+                                                <constraint firstItem="wPT-w1-D0H" firstAttribute="top" secondItem="aw8-d9-J4U" secondAttribute="bottom" constant="12" symbolic="YES" id="X2r-Sq-gJT"/>
+                                                <constraint firstItem="gmr-q9-fiR" firstAttribute="top" secondItem="dPR-ng-nKZ" secondAttribute="bottom" constant="10" symbolic="YES" id="Xyj-EA-nNh"/>
+                                                <constraint firstItem="OMu-Gf-4QP" firstAttribute="top" secondItem="J9s-Ff-S1C" secondAttribute="bottom" constant="15" id="Ywj-uH-Bhw"/>
+                                                <constraint firstItem="MfA-Da-7Wh" firstAttribute="top" secondItem="gmr-q9-fiR" secondAttribute="bottom" constant="12" id="ZTG-h4-fOo"/>
+                                                <constraint firstItem="wPT-w1-D0H" firstAttribute="leading" secondItem="uOf-4o-q0H" secondAttribute="leading" constant="20" symbolic="YES" id="ZYA-XW-y8j"/>
+                                                <constraint firstItem="gmr-q9-fiR" firstAttribute="leading" secondItem="OMu-Gf-4QP" secondAttribute="trailing" constant="8" symbolic="YES" id="aFE-Ra-tT7"/>
+                                                <constraint firstItem="ijy-YE-0NA" firstAttribute="leading" secondItem="aw8-d9-J4U" secondAttribute="trailing" constant="12" symbolic="YES" id="ahj-qJ-WXt"/>
+                                                <constraint firstItem="2AQ-JM-Fgo" firstAttribute="top" secondItem="uOf-4o-q0H" secondAttribute="top" constant="20" symbolic="YES" id="cWt-xz-yUy"/>
+                                                <constraint firstItem="ijy-YE-0NA" firstAttribute="top" secondItem="gmr-q9-fiR" secondAttribute="bottom" constant="12" id="g5d-zC-tnw"/>
+                                                <constraint firstItem="OMu-Gf-4QP" firstAttribute="leading" secondItem="uOf-4o-q0H" secondAttribute="leading" constant="20" symbolic="YES" id="js0-Bv-IRz"/>
+                                                <constraint firstItem="aw8-d9-J4U" firstAttribute="top" secondItem="gmr-q9-fiR" secondAttribute="bottom" constant="12" id="p3t-DC-9eq"/>
+                                                <constraint firstItem="wPT-w1-D0H" firstAttribute="top" secondItem="ijy-YE-0NA" secondAttribute="bottom" constant="12" symbolic="YES" id="q2k-uA-yK2"/>
+                                                <constraint firstItem="wPT-w1-D0H" firstAttribute="top" secondItem="ijy-YE-0NA" secondAttribute="bottom" constant="12" symbolic="YES" id="rz0-5i-h2R"/>
+                                                <constraint firstItem="J9s-Ff-S1C" firstAttribute="leading" secondItem="uOf-4o-q0H" secondAttribute="leading" constant="20" symbolic="YES" id="uOi-a1-oZa"/>
+                                                <constraint firstItem="dPR-ng-nKZ" firstAttribute="leading" secondItem="J9s-Ff-S1C" secondAttribute="trailing" constant="8" symbolic="YES" id="uyU-pm-OjN"/>
+                                                <constraint firstItem="gmr-q9-fiR" firstAttribute="leading" secondItem="OMu-Gf-4QP" secondAttribute="trailing" constant="8" symbolic="YES" id="vBx-I5-H5b"/>
+                                                <constraint firstItem="gmr-q9-fiR" firstAttribute="top" secondItem="dPR-ng-nKZ" secondAttribute="bottom" constant="10" symbolic="YES" id="vtK-ur-LDu"/>
+                                                <constraint firstItem="OMu-Gf-4QP" firstAttribute="top" secondItem="J9s-Ff-S1C" secondAttribute="bottom" constant="15" id="xA6-Sd-QJ9"/>
+                                                <constraint firstItem="dPR-ng-nKZ" firstAttribute="top" secondItem="2AQ-JM-Fgo" secondAttribute="bottom" constant="8" symbolic="YES" id="yq0-4e-eQu"/>
+                                            </constraints>
+                                        </view>
+                                    </tabViewItem>
                                 </tabViewItems>
                             </tabView>
                         </subviews>
@@ -667,13 +785,22 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="checkConnectionButton" destination="ijy-YE-0NA" id="wy5-ey-7cb"/>
+                        <outlet property="clearProxyButton" destination="aw8-d9-J4U" id="jda-3a-Ndm"/>
                         <outlet property="customShortcutField" destination="Sez-cd-FxV" id="jM3-mL-nwl"/>
                         <outlet property="customizeShortcutButton" destination="eYv-bl-ISD" id="A8e-W7-hId"/>
+                        <outlet property="enableProxyCheckbox" destination="2AQ-JM-Fgo" id="sah-QV-dSw"/>
                         <outlet property="enableShortcutCheckbox" destination="4an-Uq-h1h" id="uVl-od-XuD"/>
                         <outlet property="helpButton" destination="OMo-W2-1JR" id="Z1Y-67-0XG"/>
+                        <outlet property="openProxyWindow" destination="wPT-w1-D0H" id="Ehg-sv-Fpl"/>
                         <outlet property="preferenceTabs" destination="Raa-c4-OJT" id="DXD-bt-WPb"/>
+                        <outlet property="proxyHostInput" destination="dPR-ng-nKZ" id="7aY-kD-cda"/>
+                        <outlet property="proxyHostLabel" destination="J9s-Ff-S1C" id="OPm-a4-eul"/>
+                        <outlet property="proxyPortInput" destination="gmr-q9-fiR" id="jiy-JK-8VS"/>
+                        <outlet property="proxyPortLabel" destination="OMu-Gf-4QP" id="aMC-Fv-dBi"/>
                         <outlet property="saveAndOpenButton" destination="7el-lk-1SX" id="AZj-yn-Rus"/>
                         <outlet property="saveButton" destination="Pox-37-TOV" id="3bL-8O-hvq"/>
+                        <outlet property="saveProxyButton" destination="MfA-Da-7Wh" id="bZJ-dG-fBA"/>
                         <outlet property="setUnsetFloatingButton" destination="49p-5x-656" id="IdN-za-y8d"/>
                         <outlet property="websiteComboBox" destination="Ypo-2I-PqY" id="0IX-sX-B96"/>
                     </connections>
