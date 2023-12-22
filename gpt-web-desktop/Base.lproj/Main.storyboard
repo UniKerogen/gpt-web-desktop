@@ -683,6 +683,9 @@
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
+                                                    <connections>
+                                                        <action selector="enableProxyCheckboxClicked:" target="vo8-qD-Ufy" id="QGQ-wL-rcD"/>
+                                                    </connections>
                                                 </button>
                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dPR-ng-nKZ">
                                                     <rect key="frame" x="61" y="177" width="357" height="21"/>
@@ -706,6 +709,9 @@
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
+                                                    <connections>
+                                                        <action selector="checkConnectionButtonClicked:" target="vo8-qD-Ufy" id="zbi-FF-wQq"/>
+                                                    </connections>
                                                 </button>
                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MfA-Da-7Wh">
                                                     <rect key="frame" x="13" y="107" width="111" height="32"/>
@@ -716,6 +722,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="97" id="5W6-mg-pZQ"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="saveProxyButtonClicked:" target="vo8-qD-Ufy" id="ZhQ-Ng-6dV"/>
+                                                    </connections>
                                                 </button>
                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aw8-d9-J4U">
                                                     <rect key="frame" x="122" y="107" width="159" height="32"/>

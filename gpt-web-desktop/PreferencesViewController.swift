@@ -28,11 +28,23 @@ var poe = ChatBot(name:"POE", data:"https://poe.com")  // A combination of chatb
 
 var targetWebsite: String?
 
+struct proxyBlock{
+    var enableProxy: Bool
+    var saved: Bool
+    var checked: Bool
+    var proxyHost: String
+    var proxyPort: String
+}
+
+var proxySetting = proxyBlock(enableProxy: false, saved: false, checked: false, proxyHost: "", proxyPort: "")
+
 // MARK: Preference View Controller
 
 class PreferencesViewController: NSViewController {
     
     @IBOutlet weak var preferenceTabs: NSTabView!
+    
+    // General Tab
     
     @IBOutlet weak var websiteComboBox: NSComboBox!
     
@@ -46,6 +58,21 @@ class PreferencesViewController: NSViewController {
     
     @IBOutlet weak var saveButton: NSButton!
     @IBOutlet weak var saveAndOpenButton: NSButton!
+    
+    // Connection Tab
+    @IBOutlet weak var enableProxyCheckbox: NSButton!
+    
+    @IBOutlet weak var proxyHostLabel: NSTextField!
+    @IBOutlet weak var proxyHostInput: NSTextField!
+    @IBOutlet weak var proxyPortLabel: NSTextField!
+    @IBOutlet weak var proxyPortInput: NSTextField!
+    
+    @IBOutlet weak var saveProxyButton: NSButton!
+    @IBOutlet weak var clearProxyButton: NSButton!
+    
+    @IBOutlet weak var checkConnectionButton: NSButton!
+    
+    @IBOutlet weak var openProxyWindow: NSButton!
     
     var preferencesWindowController: NSWindowController?
     
@@ -74,6 +101,11 @@ class PreferencesViewController: NSViewController {
             enableShortcutCheckbox.state = .off
         }
         updateShortcutUI()
+        
+        // Update Connection UI
+        enableProxyCheckbox.target = self
+        enableProxyCheckbox.action = #selector(enableProxyCheckboxClicked(_:))
+        updateConnectionUI()
     }
     
     //MARK: Chat Bot Preference
