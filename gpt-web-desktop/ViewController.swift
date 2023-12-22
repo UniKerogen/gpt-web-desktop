@@ -48,6 +48,9 @@ class MyViewController: NSViewController, WKNavigationDelegate {
             loadURL("https://www.chatgpt.com/")
             UserDefaults.standard.set("---Select---", forKey: "SelectedWebsite")
         }
+        
+        // Set up proxy settings
+        configureProxySettings()
 
         // Set the window size based on the stored size in UserDefaults
         do {
@@ -67,6 +70,32 @@ class MyViewController: NSViewController, WKNavigationDelegate {
         if let url = URL(string: urlString) {
             let request = URLRequest(url: url)
             myWebView.load(request)
+        }
+    }
+    
+    // MARK: Proxy Settings
+
+    // Configure proxy settings
+    private func configureProxySettings() {
+        if proxySetting.enableProxy == true {
+            let proxyHost = proxySetting.proxyHost
+            let proxyPort = Int(proxySetting.proxyPort)
+            
+            // Create a custom URLSession with proxy settings
+            let configuration = URLSessionConfiguration.default
+            configuration.connectionProxyDictionary = [
+                kCFNetworkProxiesHTTPEnable: true,
+                kCFNetworkProxiesHTTPProxy: proxyHost,
+                kCFNetworkProxiesHTTPPort: proxyPort ?? 8888,
+                // Add other proxy settings as needed
+            ]
+
+            let customSession = URLSession(configuration: configuration)
+
+            // Set the custom session on the WKWebView's process pool
+            let processPool = WKProcessPool()
+            processPool.setValue(customSession, forKey: "customSession")
+            myWebView.configuration.processPool = processPool
         }
     }
     
