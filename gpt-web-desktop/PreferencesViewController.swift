@@ -69,7 +69,10 @@ class PreferencesViewController: NSViewController {
     
     @IBOutlet weak var saveProxyButton: NSButton!
     @IBOutlet weak var clearProxyButton: NSButton!
+    @IBOutlet weak var helpButtonConnection: NSButton!
     
+    @IBOutlet weak var testConnectionLabel: NSTextField!
+    @IBOutlet weak var testConnectionComboBox: NSComboBox!
     @IBOutlet weak var checkConnectionButton: NSButton!
     
     @IBOutlet weak var openProxyWindow: NSButton!
@@ -107,6 +110,8 @@ class PreferencesViewController: NSViewController {
         enableProxyCheckbox.action = #selector(enableProxyCheckboxClicked(_:))
         updateConnectionUI()
     }
+    
+    // MARK: General Tab
     
     //MARK: Chat Bot Preference
     
@@ -174,12 +179,12 @@ class PreferencesViewController: NSViewController {
         preferencesWindowController?.showWindow(sender)
     }
     
-    //MARK: Help Button
+    //MARK: Help Button - General
 
     @IBAction func showTooltip(_ sender: Any) {
         let alert = NSAlert()
         
-        let messageText = "Help of Settings..."
+        let messageText = "Help of General Settings..."
         
         alert.messageText = messageText
         alert.informativeText = "\n\n\n\n\n\n\n\n"
@@ -374,7 +379,7 @@ class PreferencesViewController: NSViewController {
         updateShortcutUI()
     }
     
-    // MARK: Connection
+    // MARK: Connection Tab
     
     func updateConnectionUI() {
         if enableProxyCheckbox.state == .on {
@@ -382,8 +387,10 @@ class PreferencesViewController: NSViewController {
             proxyHostInput.isEnabled = true
             proxyPortLabel.isEnabled = true
             proxyPortInput.isEnabled = true
+            
             saveProxyButton.isEnabled = true
             clearProxyButton.isEnabled = true
+            helpButtonConnection.isEnabled = true
         } else {
             proxyHostLabel.isEnabled = false
             proxyHostInput.isEnabled = false
@@ -435,6 +442,73 @@ class PreferencesViewController: NSViewController {
         
         updateConnectionUI()
     }
+    
+    // MARK: Connection Help Button
+    @IBAction func helpButtonConnectionClicked(_ sender: Any) {
+        let alert = NSAlert()
+        let messageText = "Help of Connection..."
+        
+        alert.messageText = messageText
+        alert.informativeText = "\n\n\n"
+        alert.alertStyle = .informational
+        
+        // Create an NSTextView for customizing the text alignment
+        let textView = NSTextView(frame: NSRect(x: 0, y: 0, width: 300, height: 100))
+        textView.isEditable = false
+        // Set the background color to match the alert's background color
+        textView.backgroundColor = NSColor.clear
+        
+        // Set text color for both light and dark mode
+        textView.textColor = NSColor.textColor
+        
+        // Set the appearance to match the alert's appearance
+        textView.appearance = alert.window.appearance
+        
+        // Set left alignment for the text view
+        textView.alignment = .left
+        
+        // Paragraph Style
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 1.2
+        let boldbody: [NSAttributedString.Key: Any] = [
+            .font: NSFont.boldSystemFont(ofSize: 12),
+            .paragraphStyle: paragraphStyle,
+            .foregroundColor: NSColor.textColor
+        ]
+        let body: [NSAttributedString.Key: Any] = [
+            .font: NSFont.systemFont(ofSize: 12),
+            .paragraphStyle: paragraphStyle,
+            .foregroundColor: NSColor.textColor
+        ]
+        let italicbody: [NSAttributedString.Key: Any] = [
+            .font: NSFontManager.shared.convert(NSFont.systemFont(ofSize: 12), toHaveTrait: .italicFontMask),
+            .paragraphStyle: paragraphStyle,
+            .foregroundColor: NSColor.textColor
+        ]
+        
+        let connectionInformativeText = NSMutableAttributedString()
+        connectionInformativeText.append(NSAttributedString(string:"Only Open Window with Proxy in this Tab\n\n", attributes: body))
+        connectionInformativeText.append(NSAttributedString(string:"Steps of Setting:\n", attributes: boldbody))
+        connectionInformativeText.append(NSAttributedString(string:"1. Input Proxy Host and Port\n", attributes: body))
+        connectionInformativeText.append(NSAttributedString(string:"2. Save Proxy\n", attributes: body))
+        connectionInformativeText.append(NSAttributedString(string:"3. Check Connection with Selected Web\n", attributes: body))
+        connectionInformativeText.append(NSAttributedString(string:"4. Open Desired Window\n", attributes: body))
+        
+        // Apply the attributed text to the text view
+        textView.textStorage?.setAttributedString(connectionInformativeText)
+        
+        // Add the text view as an accessory view to the alert
+        alert.accessoryView = textView
+        
+        // Adjust the positioning of the text view within the alert
+        textView.frame.origin.y = -50
+        
+        alert.beginSheetModal(for: view.window!) { _ in
+            // Code to execute after the alert is dismissed
+        }
+    }
+    
+    // MARK: Check Connection
     
     @IBAction func checkConnectionButtonClicked(_ sender: Any) {
         
