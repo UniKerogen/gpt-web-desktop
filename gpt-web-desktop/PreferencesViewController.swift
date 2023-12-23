@@ -373,4 +373,92 @@ class PreferencesViewController: NSViewController {
         // Update UI
         updateShortcutUI()
     }
+    
+    // MARK: Connection
+    
+    func updateConnectionUI() {
+        if enableProxyCheckbox.state == .on {
+            proxyHostLabel.isEnabled = true
+            proxyHostInput.isEnabled = true
+            proxyPortLabel.isEnabled = true
+            proxyPortInput.isEnabled = true
+            saveProxyButton.isEnabled = true
+            clearProxyButton.isEnabled = true
+        } else {
+            proxyHostLabel.isEnabled = false
+            proxyHostInput.isEnabled = false
+            proxyPortLabel.isEnabled = false
+            proxyPortInput.isEnabled = false
+            saveProxyButton.isEnabled = false
+            clearProxyButton.isEnabled = false
+            checkConnectionButton.isEnabled = false
+            openProxyWindow.isEnabled = false
+            
+            // clear proxy setting
+            proxySetting.proxyHost = ""
+            proxySetting.proxyPort = ""
+        }
+        
+        if proxySetting.saved == true {
+            checkConnectionButton.isEnabled = true
+        } else {
+            checkConnectionButton.isEnabled = false
+        }
+        
+        if proxySetting.checked == true {
+            openProxyWindow.isEnabled = true
+        } else {
+            openProxyWindow.isEnabled = false
+        }
+    }
+    
+    @IBAction func enableProxyCheckboxClicked(_ sender: NSButton) {
+        if sender.state == .on {
+            proxySetting.enableProxy = true
+        } else {
+            proxySetting.enableProxy = false
+        }
+        
+        // Update UI
+        updateConnectionUI()
+    }
+    
+    @IBAction func openProxyWindow(_ sender: Any) {
+        // Show New Window
+        if let appDelegate = NSApplication.shared.delegate as? AppDelegate {
+            appDelegate.showMainWindow(windowLevel: false)
+        }
+    }
+    
+    @IBAction func saveProxyButtonClicked(_ sender: Any) {
+        
+        
+        updateConnectionUI()
+    }
+    
+    @IBAction func checkConnectionButtonClicked(_ sender: Any) {
+        
+        
+        updateConnectionUI()
+    }
+    
+    
+    
+    @IBAction func clearPreviousProxy(_ sender: Any) {
+        proxySetting.proxyHost = ""
+        proxySetting.proxyPort = ""
+        proxySetting.saved = false
+        proxySetting.checked = false
+        updateConnectionUI()
+    }
+    
+    // Function to display an NSAlert
+    private func showAlert(withTitle title: String, message: String) {
+        let alert = NSAlert()
+        alert.messageText = title
+        alert.informativeText = message
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "OK")
+        alert.runModal()
+    }
 }
