@@ -76,6 +76,7 @@ class PreferencesViewController: NSViewController {
     @IBOutlet weak var checkConnectionButton: NSButton!
     
     @IBOutlet weak var openProxyWindow: NSButton!
+    @IBOutlet weak var openFloatingProxyWindow: NSButton!
     
     var preferencesWindowController: NSWindowController?
     
@@ -407,17 +408,25 @@ class PreferencesViewController: NSViewController {
         }
         
         if proxySetting.saved == true {
+            testConnectionLabel.isEnabled = true
+            testConnectionComboBox.isEnabled = true
             checkConnectionButton.isEnabled = true
         } else {
+            testConnectionLabel.isEnabled = false
+            testConnectionComboBox.isEnabled = false
             checkConnectionButton.isEnabled = false
         }
         
         if proxySetting.checked == true {
             openProxyWindow.isEnabled = true
+            openFloatingProxyWindow.isEnabled = true
         } else {
             openProxyWindow.isEnabled = false
+            openFloatingProxyWindow.isEnabled = false
         }
     }
+    
+    // MARK: Proxy Settings
     
     @IBAction func enableProxyCheckboxClicked(_ sender: NSButton) {
         if sender.state == .on {
