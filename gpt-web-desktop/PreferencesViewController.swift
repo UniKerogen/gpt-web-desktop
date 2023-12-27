@@ -447,7 +447,18 @@ class PreferencesViewController: NSViewController {
     }
     
     @IBAction func saveProxyButtonClicked(_ sender: Any) {
-        
+        let proxyHost = proxyHostInput.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
+        let proxyPort = proxyPortInput.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        // Check if both proxyHost and proxyPort are not empty
+        if !proxyHost.isEmpty && !proxyPort.isEmpty {
+            proxySetting.proxyHost = proxyHost
+            proxySetting.proxyPort = proxyPort
+            proxySetting.saved = true
+        } else {
+            showAlert(withTitle: "Error", message: "Proxy host or port cannot be empty.")
+            return
+        }
         
         updateConnectionUI()
     }
@@ -501,7 +512,7 @@ class PreferencesViewController: NSViewController {
         connectionInformativeText.append(NSAttributedString(string:"1. Input Proxy Host and Port\n", attributes: body))
         connectionInformativeText.append(NSAttributedString(string:"2. Save Proxy\n", attributes: body))
         connectionInformativeText.append(NSAttributedString(string:"3. Check Connection with Selected Web\n", attributes: body))
-        connectionInformativeText.append(NSAttributedString(string:"4. Open Desired Window\n", attributes: body))
+        connectionInformativeText.append(NSAttributedString(string:"4. Open Desired Window with Buttons\n", attributes: body))
         
         // Apply the attributed text to the text view
         textView.textStorage?.setAttributedString(connectionInformativeText)
@@ -520,12 +531,46 @@ class PreferencesViewController: NSViewController {
     // MARK: Check Connection
     
     @IBAction func checkConnectionButtonClicked(_ sender: Any) {
-        
+        if checkProxyUsability() {
+            showAlert(withTitle: "Success", message: "Proxy is usable targeting Google.")
+            proxySetting.checked = true
+        } else {
+            showAlert(withTitle: "Error", message: "Proxy is not usable targeting Google.")
+        }
         
         updateConnectionUI()
     }
     
-    
+    private func checkProxyUsability() -> Bool {
+        guard let proxyURL = URL(string: "https://www.google.com") else {
+            return false
+        }
+
+        let proxyConfiguration = URLSessionConfiguration.default
+        proxyConfiguration.connectionProxyDictionary = [
+            kCFNetworkProxiesHTTPEnable: true,
+            kCFNetworkProxiesHTTPProxy: proxySetting.proxyHost,
+            kCFNetworkProxiesHTTPPort: proxySetting.proxyPort,
+            // Add other proxy settings as needed
+        ]
+
+        let session = URLSession(configuration: proxyConfiguration)
+        let semaphore = DispatchSemaphore(value: 0)
+
+        var success = false
+
+        let task = session.dataTask(with: proxyURL) { (data, response, error) in
+            if let httpResponse = response as? HTTPURLResponse {
+                success = (200 ..< 300) ~= httpResponse.statusCode
+            }
+            semaphore.signal()
+        }
+
+        task.resume()
+        semaphore.wait()
+
+        return success
+    }
     
     @IBAction func clearPreviousProxy(_ sender: Any) {
         proxySetting.proxyHost = ""
