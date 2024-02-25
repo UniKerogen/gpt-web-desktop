@@ -81,8 +81,7 @@ class PreferencesViewController: NSViewController {
     var preferencesWindowController: NSWindowController?
     
     // Add website options
-    let websiteOptions = ["ChatGPT", "Claude", "Bing", "文心一言", "通义千问",
-                          "Playground", "POE"]
+    let websiteOptions = ["ChatGPT", "Claude", "Google", "Bing", "文心一言", "通义千问", "Playground", "POE"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
