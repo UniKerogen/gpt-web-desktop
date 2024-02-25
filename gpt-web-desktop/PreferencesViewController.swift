@@ -114,29 +114,28 @@ class PreferencesViewController: NSViewController {
     // MARK: General Tab
     
     //MARK: Chat Bot Preference
-    
     func convertWebsiteNameToURL(_ websiteName: String) -> String {
         switch websiteName {
-        case chatGPT.name:
-            return chatGPT.data
-        case claude.name:
-            return claude.data
-            //        case google.name:
-            //            return google.data
-        case bing.name:
-            return bing.data
-        case phind.name:
-            return phind.data
-        case playground.name:
-            return playground.data
-        case wyyx.name:
-            return wyyx.data
-        case tyqw.name:
-            return tyqw.data
-        case poe.name:
-            return poe.data
-        default:
-            return chatGPT.data
+            case chatGPT.name:
+                return chatGPT.data
+            case claude.name:
+                return claude.data
+            case google.name:
+                return google.data
+            case bing.name:
+                return bing.data
+            case phind.name:
+                return phind.data
+            case playground.name:
+                return playground.data
+            case wyyx.name:
+                return wyyx.data
+            case tyqw.name:
+                return tyqw.data
+            case poe.name:
+                return poe.data
+            default:
+                return chatGPT.data
         }
     }
     
@@ -528,7 +527,6 @@ class PreferencesViewController: NSViewController {
     }
     
     // MARK: Check Connection
-    
     @IBAction func checkConnectionButtonClicked(_ sender: Any) {
         if checkProxyUsability() {
             showAlert(withTitle: "Success", message: "Proxy is usable targeting Google.")
