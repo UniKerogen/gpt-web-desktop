@@ -26,6 +26,17 @@ var tyqw = ChatBot(name:"通义千问", data:"https://qianwen.aliyun.com")
 var poe = ChatBot(name:"POE", data:"https://poe.com")  // A combination of chatbots
 // var notion = ChatBot(name:"Notion", data:"www.notion.so")  // Note
 
+// MARK: Test Connection Website
+struct testWebsite{
+    var name: String
+    var data: String
+}
+
+var testGoogle = testWebsite(name:"Google", data:"https://www.google.com")
+var testBaidu = testWebsite(name: "Baidu", data: "https://www.baidu.com")
+
+let testWebsiteOption = ["Google", "Baidu"]
+
 var targetWebsite: String?
 
 struct proxyBlock{
@@ -86,6 +97,7 @@ class PreferencesViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         websiteComboBox.addItems(withObjectValues: websiteOptions)
+        testConnectionComboBox.addItems(withObjectValues: testWebsiteOption)
         
         // Load saved preference or set a default value
         if let selectedWebsite = UserDefaults.standard.string(forKey: "SelectedWebsite") {
