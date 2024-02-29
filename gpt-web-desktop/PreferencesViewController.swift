@@ -550,6 +550,17 @@ class PreferencesViewController: NSViewController {
         updateConnectionUI()
     }
     
+    func convertTestWebsiteNameToURL(_ websiteName: String) -> String {
+        switch websiteName {
+            case testGoogle.name:
+                return testGoogle.data
+            case testBaidu.name:
+                return testBaidu.data
+            default:
+                return testGoogle.data
+        }
+    }
+    
     private func checkProxyUsability() -> Bool {
         guard let proxyURL = URL(string: "https://www.google.com") else {
             return false
