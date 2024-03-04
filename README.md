@@ -11,7 +11,7 @@ A simple application in macOS that brings some of the most popular chatbots righ
 - [x] Quick Selection for ChatBots in Dock Menu
 - [x] Window Always On Top
 - [x] Customizable Global ShortCut
-- [ ] Proxy Settings (Theoretical)
+- [x] Proxy Settings (Theoretical & Test Required)
 
 ## App Screens
 | ChatGPT | Claude | Playground |
