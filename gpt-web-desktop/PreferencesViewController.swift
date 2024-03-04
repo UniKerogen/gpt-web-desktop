@@ -562,7 +562,19 @@ class PreferencesViewController: NSViewController {
     }
     
     private func checkProxyUsability() -> Bool {
-        guard let proxyURL = URL(string: "https://www.google.com") else {
+        // Set Connection Test
+        var testWebsiteName = ""
+        
+        if let selectedTestWebsite = UserDefaults.standard.string(forKey: "SelectedTestWebsite") {
+            testConnectionComboBox.stringValue = selectedTestWebsite
+            testWebsiteName = selectedTestWebsite
+        } else {
+            testConnectionComboBox.stringValue = testWebsiteOption.first ?? ""
+            testWebsiteName = testConnectionComboBox.stringValue
+        }
+        
+        // Check Usability
+        guard let proxyURL = URL(string: convertTestWebsiteNameToURL(testWebsiteName)) else {
             return false
         }
 
