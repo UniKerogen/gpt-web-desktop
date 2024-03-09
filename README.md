@@ -18,7 +18,7 @@ A simple application in macOS that brings some of the most popular chatbots righ
 |:-------:|:------:|:----------:|
 |![](https://github.com/UniKerogen/gpt-web-desktop/blob/main/supplement/app_screen_1.png)|![](https://github.com/UniKerogen/gpt-web-desktop/blob/main/supplement/app_screen_2.png)|![](https://github.com/UniKerogen/gpt-web-desktop/blob/main/supplement/app_screen_3.png)|
 | 通义千问 | 文心一言 | |
-|![](https://github.com/UniKerogen/gpt-web-desktop/blob/main/supplement/app_screen_4.png)|![](https://github.com/UniKerogen/gpt-web-desktop/blob/main/supplement/app_screen_5.png)| |
+|![](https://github.com/UniKerogen/gpt-web-desktop/blob/main/supplement/app_screen_4.png)|![](https://github.com/UniKerogen/gpt-web-desktop/blob/main/supplement/app_screen_5.png)|![](https://github.com/UniKerogen/gpt-web-desktop/blob/main/supplement/app_screen_6.png) |
 | App Menu | Dock Menu | Settings Menu |
 |![](https://github.com/UniKerogen/gpt-web-desktop/blob/main/supplement/app_menu.png)|![](https://github.com/UniKerogen/gpt-web-desktop/blob/main/supplement/dock_menu.png)|![](https://github.com/UniKerogen/gpt-web-desktop/blob/main/supplement/settings_window.png)|
 
